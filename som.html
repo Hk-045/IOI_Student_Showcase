@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoM Profiles | PW IOI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --accent: #fbbf24; 
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-muted: #94a3b8;
+            --success: #34d399;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
+        
+        nav {
+            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
+        nav .logo span { color: var(--accent); }
+        nav .links { display: flex; gap: 25px; }
+        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+        nav .links a:hover, nav .links a.active { color: #fff; }
+
+        .hero { padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; font-weight: 800; }
+        .hero p { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        .profile-card {
+            background: var(--glass); border: 1px solid var(--glass-border); border-radius: 28px;
+            padding: 40px; margin-bottom: 50px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px;
+            transition: 0.4s;
+        }
+        .profile-card:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
+
+        .profile-left h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+        .tagline { color: var(--accent); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; display: block; margin-bottom: 30px; }
+
+        .section-title { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 15px; display: block; }
+        
+        .experience-item { margin-bottom: 20px; }
+        .company-name { font-size: 1rem; font-weight: 800; color: #fff; display: block; }
+        .role-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+        .impact-list { list-style: none; }
+        .impact-list li { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 12px; padding-left: 25px; position: relative; }
+        .impact-list li::before { content: "→"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
+        .metric { color: var(--success); font-weight: 800; }
+
+        .skills-footer { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--glass-border); }
+        .skill-tag { font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 6px; color: var(--text-muted); border: 1px solid var(--glass-border); }
+
+        .btn-link {
+            display: inline-block; width: 100%; text-align: center; background: #fff; color: #020617;
+            padding: 12px; border-radius: 12px; font-weight: 800; text-decoration: none; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-link:hover { background: var(--accent); transform: translateY(-2px); }
+
+        @media (max-width: 900px) { .profile-card { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">PW <span>IOI</span></a>
+        <div class="links">
+            <a href="sot.html">SOT</a>
+            <a href="som.html" class="active">SOM</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <p>School of Management</p>
+        <h1>Strategic Business Leaders</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Rishabh Jain</h2>
+                <span class="tagline">Operations & Finance</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Outskill</span><span class="role-title">Program Associate (PPO)</span></div>
+                <div class="experience-item"><span class="company-name">Physics Wallah</span><span class="role-title">Founding Member (LeapX)</span></div>
+                <div class="experience-item"><span class="company-name">Apex Fashion Lab</span><span class="role-title">Founding Team</span></div>
+                <a href="https://drive.google.com/file/d/194HGnOhPiWE-PYvtfelx2O_dGaJ_GQ4K/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Scaled international mentor pipeline from 4 to 12 in <span class="metric">3 weeks</span>.</li>
+                    <li>Generated <span class="metric">6-figure revenue</span> for PW LeapX within first 3 months.</li>
+                    <li>Managed budgets and cohorts generating <span class="metric">₹22 Lakhs</span> in 6 months.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Financial Analysis</span><span class="skill-tag">Power BI</span><span class="skill-tag">Outreach</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Saket Kumar</h2>
+                <span class="tagline">Consulting & Marketing</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Chatkara / Go To Marketers</span><span class="role-title">Founder</span></div>
+                <div class="experience-item"><span class="company-name">Physics Wallah</span><span class="role-title">Marketing Intern</span></div>
+                <div class="experience-item"><span class="company-name">PotPot</span><span class="role-title">Operations & Sales</span></div>
+                <a href="https://drive.google.com/file/d/193Vgi1RQ-39UCnZgvxoR6dzFi0NNvgeB/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Led GTM for Chatkara, selling <span class="metric">1,000+ units</span> at launch.</li>
+                    <li>Boosted PW subscriber base from 4k to <span class="metric">26,734</span> via campaigns.</li>
+                    <li>Designed marketing plans projecting <span class="metric">25x ROI</span> (₹50L revenue).</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">GTM Strategy</span><span class="skill-tag">Brand Analytics</span><span class="skill-tag">Growth Lead</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Kaif Alam</h2>
+                <span class="tagline">Operations & Bus. Dev.</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Hanzo / Adcartel</span><span class="role-title">Founder</span></div>
+                <div class="experience-item"><span class="company-name">Acres & Inches</span><span class="role-title">Sales Executive</span></div>
+                <div class="experience-item"><span class="company-name">INTY / Aasta.food</span><span class="role-title">Founding Member</span></div>
+                <a href="https://drive.google.com/file/d/1MU5wV4JWYuLLHaWsF_1xRS4_C8l1HVyj/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Winner: <span class="metric">TiE Bangalore Startup Challenge</span>.</li>
+                    <li>Generated <span class="metric">₹6 Lakh+ revenue</span> through startup execution.</li>
+                    <li>Expert in real estate deal closures and end-to-end product development.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Sales Closure</span><span class="skill-tag">Product Building</span><span class="skill-tag">Airtable</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Sanket Jain</h2>
+                <span class="tagline">Business Strategy</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Physics Wallah</span><span class="role-title">Strategy Intern</span></div>
+                <div class="experience-item"><span class="company-name">Lit School / GoToMarketers</span><span class="role-title">Business Associate</span></div>
+                <a href="https://drive.google.com/file/d/1K-YXahczHypOgdJKiAJtauQUnDrxYBO5/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Contributed to a <span class="metric">₹10 Cr+ revenue pipeline</span> at PW.</li>
+                    <li>Winner: <span class="metric">PW IOI Startup Challenge</span>; Top 10 National Challenge.</li>
+                    <li>Analyzed 100+ startups to create institutional research models.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Strategy Research</span><span class="skill-tag">Public Speaking</span><span class="skill-tag">Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Dharani Hosur</h2>
+                <span class="tagline">Growth Marketing</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Buy From Rural</span><span class="role-title">Digital Marketing Lead</span></div>
+                <div class="experience-item"><span class="company-name">A.L.I.G.N / Apex Fashion Lab</span><span class="role-title">Founding Team</span></div>
+                <a href="https://drive.google.com/file/d/1BIN6P8FVp6X-v8cD02-Re0uYgTVxdFlD/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Ran marketing reaching <span class="metric">4 Million+</span> people.</li>
+                    <li>Achieved <span class="metric">₹1.6 cost-per-result</span> (CTR optimization).</li>
+                    <li>Led 3-member branding teams to generate quick revenue cycles.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Ad Management</span><span class="skill-tag">Community Management</span><span class="skill-tag">Growth</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Rutik Mane</h2>
+                <span class="tagline">Product & Analytics</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Physics Wallah</span><span class="role-title">Career Counselor Intern</span></div>
+                <div class="experience-item"><span class="company-name">Optic Planet / Jumpp</span><span class="role-title">Manager / Product Dev</span></div>
+                <a href="https://drive.google.com/file/d/1MkQob6FEsDRoTVZ7sKz-d127YW37gUy0/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Mentored <span class="metric">300+ students</span> on career planning.</li>
+                    <li>Managed end-to-end sales and stock operations for Optic Planet.</li>
+                    <li>Expertise in <span class="metric">Power BI, SQL, and Google Analytics</span>.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Product Management</span><span class="skill-tag">SQL</span><span class="skill-tag">User Research</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Sahil Soni</h2>
+                <span class="tagline">Research & Strategy</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Physics Wallah</span><span class="role-title">B2G Strategy Intern</span></div>
+                <div class="experience-item"><span class="company-name">Airlearn / Personals</span><span class="role-title">Equity Research</span></div>
+                <a href="https://drive.google.com/file/d/1eXV5VC7ZgDOY-6NCc_aDTOlG0pg73Rl4/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Secured <span class="metric">3 Govt Partnerships</span> for PW via policy MoUs.</li>
+                    <li>Achieved <span class="metric">30% returns</span> on simulated market portfolios.</li>
+                    <li>Generated <span class="metric">₹1.5L profit</span> through market research.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Policy Strategy</span><span class="skill-tag">Market Research</span><span class="skill-tag">Valuation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Abhinav</h2>
+                <span class="tagline">Community & Growth</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Hudle / Weekday</span><span class="role-title">Community & BDA Intern</span></div>
+                <div class="experience-item"><span class="company-name">Community 55</span><span class="role-title">Founder's Office</span></div>
+                <a href="https://drive.google.com/file/d/1K87fr_Ibfevt_HPUxg0K3dvVxh6mtc-1/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Built active player networks of <span class="metric">500+ members</span>.</li>
+                    <li>Maintained <span class="metric">50%+ engagement</span> response rates across channels.</li>
+                    <li>Streamlined HR and recruitment workflows for Founder's Office.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Community Building</span><span class="skill-tag">Recruitment</span><span class="skill-tag">HubSpot</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Nitesh Dongre</h2>
+                <span class="tagline">Operations & Logistics</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Cultfit</span><span class="role-title">Centre Manager</span></div>
+                <div class="experience-item"><span class="company-name">Vee Naturals / Zolo</span><span class="role-title">Logistics & Marketing Lead</span></div>
+                <a href="https://drive.google.com/file/d/1BIN6P8FVp6X-v8cD02-Re0uYgTVxdFlD/view" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Reduced operational marketing costs by <span class="metric">20%</span>.</li>
+                    <li>Optimized supply processes and national vendor relations.</li>
+                    <li>Led center management operations for scale and efficiency.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">Logistics</span><span class="skill-tag">Operations Mgmt</span><span class="skill-tag">Supply Chain</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-left">
+                <h2>Jaypal Pandey</h2>
+                <span class="tagline">Marketing & Sales</span>
+                <span class="section-title">Full Experience</span>
+                <div class="experience-item"><span class="company-name">Ticketsque</span><span class="role-title">Marketing Intern</span></div>
+                <div class="experience-item"><span class="company-name">A.L.I.G.N / House of GenZ</span><span class="role-title">Founding Team</span></div>
+                <a href="https://drive.google.com/drive/folders/1kUUxv680wTPHJZAWXWvmhywqjMqrAXa8" target="_blank" class="btn-link">View Portfolio</a>
+            </div>
+            <div class="profile-right">
+                <span class="section-title">Business Impact</span>
+                <ul class="impact-list">
+                    <li>Contributed to <span class="metric">₹10 Lakh+</span> in ticket sales for Ticketsque.</li>
+                    <li>Led agency growth achieving <span class="metric">2x sales</span> for clients.</li>
+                    <li>Generated ₹30k revenue with 50% profit in just 2 days.</li>
+                </ul>
+                <div class="skills-footer">
+                    <span class="skill-tag">B2B Sales</span><span class="skill-tag">Lead Gen</span><span class="skill-tag">Branding</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

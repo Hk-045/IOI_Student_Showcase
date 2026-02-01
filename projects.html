@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Projects & Startups | PW IOI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --accent: #6366f1;
+            --secondary: #22d3ee;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-muted: #94a3b8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #e5e7eb; line-height: 1.6; overflow-x: hidden; }
+        
+        nav {
+            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
+        nav .logo span { color: var(--secondary); }
+        nav .links { display: flex; gap: 25px; }
+        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        nav .links a.active { color: #fff; }
+
+        .hero { padding: 80px 20px 40px; text-align: center; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        section { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        section h2 { font-size: 2.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; color: #fff; }
+        section h2 span { width: 40px; height: 4px; background: var(--accent); border-radius: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 25px; }
+        
+        .card { 
+            background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; 
+            padding: 30px; transition: 0.4s; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-8px); border-color: var(--secondary); background: rgba(255,255,255,0.06); }
+
+        .card h3 { font-size: 1.4rem; color: #fff; margin-bottom: 10px; }
+        .stack { font-size: 0.75rem; color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        
+        .card ul { list-style: none; margin-bottom: 20px; flex-grow: 1; }
+        .card ul li { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; padding-left: 18px; position: relative; }
+        .card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+        .outcome-box { font-size: 0.85rem; color: var(--secondary); font-weight: 600; padding-top: 15px; border-top: 1px solid var(--glass-border); }
+        .visit-link { margin-top: 10px; font-size: 0.85rem; color: #fff; font-weight: 700; text-decoration: underline; }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">PW <span>IOI</span></a>
+        <div class="links">
+            <a href="sot.html">SOT</a>
+            <a href="som.html">SOM</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="skills.html">Skills</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Student Innovations</h1>
+        <p>A showcase of technical builds and entrepreneurial ventures from our cohorts.</p>
+    </div>
+
+    <section>
+        <h2><span></span>Student Technical Projects</h2>
+        <div class="grid">
+            
+            <a href="https://indiecode.vercel.app/" target="_blank" class="card">
+                <h3>IndieCode</h3>
+                <p class="stack">React · Node · Express · MongoDB · Redis</p>
+                <ul>
+                    <li>Full-stack CP platform with real-time code editing.</li>
+                    <li>Secure session handling via Redis integration.</li>
+                    <li>Scalable RESTful APIs for practicing problems.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Seamless, scalable coding practice.</p>
+                <span class="visit-link">Visit IndieCode →</span>
+            </a>
+
+            <a href="https://resume.pwioi.club/" target="_blank" class="card">
+                <h3>IntelliResume</h3>
+                <p class="stack">Python (FastAPI) · Next.js · TypeScript · MongoDB</p>
+                <ul>
+                    <li>AI analyzer optimizing resumes for ATS algorithms.</li>
+                    <li>Instantly calculates compatibility scores.</li>
+                    <li>Actionable skill gap recommendations for students.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Higher interview success rates.</p>
+                <span class="visit-link">Visit IntelliResume →</span>
+            </a>
+
+            <a href="https://jobsphere.online/" target="_blank" class="card">
+                <h3>JobSphere</h3>
+                <p class="stack">Next.js · TypeScript · Express · PostgreSQL · Prisma</p>
+                <ul>
+                    <li>Comprehensive job portal for employers and seekers.</li>
+                    <li>End-to-end job posting and applicant tracking.</li>
+                    <li>Real-time hiring status updates.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Streamlined recruitment visibility.</p>
+                <span class="visit-link">Visit JobSphere →</span>
+            </a>
+
+            <a href="https://minli.info/" target="_blank" class="card">
+                <h3>Minli</h3>
+                <p class="stack">MongoDB · Express · React · Node</p>
+                <ul>
+                    <li>URL shortener with advanced analytics and QR codes.</li>
+                    <li>Daily click tracking (Device/Browser analytics).</li>
+                    <li>Supports password protection and expiration dates.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Fast, secure link sharing.</p>
+                <span class="visit-link">Visit Minli →</span>
+            </a>
+
+            <a href="https://app.pwioi.club/" target="_blank" class="card">
+                <h3>Academic Management System</h3>
+                <p class="stack">Node · Express · TypeScript · PostgreSQL · AWS</p>
+                <ul>
+                    <li>Internal OS managing campus life and student data.</li>
+                    <li>Type-safe APIs handling 1,000+ active users.</li>
+                    <li>Automated reporting via Cron-jobs and AWS S3.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Enhanced campus operations.</p>
+                <span class="visit-link">Visit Platform →</span>
+            </a>
+
+            <div class="card">
+                <h3>CryptoSentinel</h3>
+                <p class="stack">React.js · Tailwind CSS · Express.js · Ollama</p>
+                <ul>
+                    <li>AI dashboard for real-time crypto tracking.</li>
+                    <li>Sentiment analysis for 50+ coins with 85% accuracy.</li>
+                    <li>Reduces market research time by 70%.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Insight-driven crypto trading.</p>
+            </div>
+
+            <a href="https://www.pwleapx.com/" target="_blank" class="card">
+                <h3>PWLeapX</h3>
+                <p class="stack">React · TypeScript · Tailwind · Framer Motion</p>
+                <ul>
+                    <li>Tech-execution hub connecting startups with talent.</li>
+                    <li>Supported technical execution for 20+ startups.</li>
+                    <li>Community management for 500+ founders.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Empowering startup growth.</p>
+                <span class="visit-link">Visit Website →</span>
+            </a>
+
+            <a href="https://structify.vercel.app/" target="_blank" class="card">
+                <h3>Data Structure Visualizer</h3>
+                <p class="stack">React.js · GSAP · Tailwind CSS</p>
+                <ul>
+                    <li>Interactive animations for 8+ data structures.</li>
+                    <li>Visualizes logic flow for conceptual clarity.</li>
+                    <li>Modular architecture for educational expansion.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Improved student conceptual clarity.</p>
+                <span class="visit-link">Visit Structify →</span>
+            </a>
+
+            <a href="https://github.com/RohitMakaniProfile/youtube-study-assistant" target="_blank" class="card">
+                <h3>EduTube Coach</h3>
+                <p class="stack">FastAPI · Groq · LangChain · Whisper · SQLite</p>
+                <ul>
+                    <li>Transforms video lectures into revision flashcards.</li>
+                    <li>Automated ASR to spaced revision pipeline.</li>
+                    <li>Multilingual prompting with contextual grounding.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Efficient lecture retention.</p>
+                <span class="visit-link">View Repository →</span>
+            </a>
+
+            <a href="https://github.com/RohitMakaniProfile/Multi-Modal-RAG-System" target="_blank" class="card">
+                <h3>Multimodal RAG</h3>
+                <p class="stack">CLIP · FAISS · FastAPI · Python</p>
+                <ul>
+                    <li>Retrieval system for both text and image databases.</li>
+                    <li>High-speed vector retrieval using FAISS.</li>
+                    <li>Seamless multilingual queries via CLIP embeddings.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Context-aware multimodal search.</p>
+                <span class="visit-link">View Repository →</span>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2><span></span>Student Startups</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Aasta</h3>
+                <p class="stack">Food-Tech · Sustainability · Cloud Kitchen</p>
+                <ul>
+                    <li>Redistributes surplus meals to reduce food waste.</li>
+                    <li>Helps businesses recover value from unsold items.</li>
+                    <li>Sustainable model providing affordable high-quality meals.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Sustainable food model.</p>
+            </div>
+
+            <div class="card">
+                <h3>Celestial</h3>
+                <p class="stack">E-commerce · Wellness · Artisan Focus</p>
+                <ul>
+                    <li>Wellness brand for lab-certified gemstones.</li>
+                    <li>Zodiac-based spiritual jewellery and intentions.</li>
+                    <li>Authenticity-first approach with certified stones.</li>
+                </ul>
+                <p class="outcome-box">Outcome: Wellness-based commerce.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
