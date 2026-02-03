@@ -16,7 +16,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
         
-        /* Navigation */
         nav {
             padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
             position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
@@ -34,7 +33,6 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
         
-        /* Profile Card */
         .profile-card {
             background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px;
             padding: 35px; margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px;
@@ -45,16 +43,16 @@
         .profile-info h2 { font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 5px; }
         .tagline { color: #d4af37; font-weight: 600; font-size: 0.95rem; margin-bottom: 25px; display: block; }
 
-        /* Data Link List */
         .data-links { display: grid; gap: 12px; margin-bottom: 25px; }
         .data-row { 
             display: flex; justify-content: space-between; align-items: center;
             background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 8px; border-left: 2px solid var(--accent);
+            text-decoration: none; transition: 0.3s;
         }
+        .data-row:hover { background: rgba(56, 189, 248, 0.1); }
         .data-label { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; font-weight: 800; }
         .data-val { font-size: 0.8rem; font-family: 'Courier New', monospace; color: #e2e8f0; }
 
-        /* Achievements Box */
         .achievements-box { background: rgba(167, 139, 250, 0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.1); }
         .achievements-box h4 { color: #a78bfa; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 15px; letter-spacing: 1px; }
         .achievements-box ul { list-style: none; }
@@ -94,9 +92,9 @@
                 <h2>Shoyeb Ansari</h2>
                 <span class="tagline">JEE: 95 percentile | Backend Intern @ PW IOI</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Shoyeb45</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">Shoyeb45</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Shoyeb45</span></div>
+                    <a href="https://codeforces.com/profile/Shoyeb45" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Shoyeb45</span></a>
+                    <a href="https://github.com/Shoyeb45" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Shoyeb45</span></a>
+                    <a href="https://leetcode.com/u/Shoyeb45" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Shoyeb45</span></a>
                 </div>
                 <a href="https://drive.google.com/file/d/1HRtg5pC7xkjxMwTJR30IiGbJbaXL0w6p/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
@@ -115,11 +113,11 @@
                 <h2>Divya Musahib</h2>
                 <span class="tagline">JEE: 95.36 percentile | CP Expert</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">alphastriker (1647)</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">divyamusahib</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">DivyaMusahib</span></div>
+                    <a href="https://codeforces.com/profile/alphastriker" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">alphastriker</span></a>
+                    <a href="https://github.com/divyamusahib" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">divyamusahib</span></a>
+                    <a href="https://leetcode.com/u/DivyaMusahib" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">DivyaMusahib</span></a>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1nkb8YyN998bXIfLaS-ZVA1M-EF2rmjth" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/drive/folders/1nkb8YyN998bXIfLaS-ZVA1M-EF2rmjth?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
@@ -136,9 +134,9 @@
                 <h2>Rohit Singh</h2>
                 <span class="tagline">JEE: 91 percentile | FullStack Intern @ Allo Health</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">defender45</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">Itsrohit819</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">defender087</span></div>
+                    <a href="https://codeforces.com/profile/defender45" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">defender45</span></a>
+                    <a href="https://github.com/Itsrohit819" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Itsrohit819</span></a>
+                    <a href="https://leetcode.com/u/defender087" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">defender087</span></a>
                 </div>
                 <a href="https://drive.google.com/file/d/1udVk3roAK-Ely0QR87By59NMAUUehMtw/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
@@ -147,7 +145,7 @@
                 <ul>
                     <li>Meta Hacker Cup 2025 – Ranks: 622 (R1), 153 (R2), 186 (R3).</li>
                     <li>1st Prize – Innovate & Inspire CP Competition.</li>
-                    <li>Expertise in building production-level web & mobile applications.</li>
+                    <li>Built production-level web & mobile applications.</li>
                 </ul>
             </div>
         </div>
@@ -157,9 +155,9 @@
                 <h2>Aditya Gupta</h2>
                 <span class="tagline">JEE: 97.2% | Advanced Rank 25590 | Hackathon Winner</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Chill-guy</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">Adityag0243</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Chill-guy</span></div>
+                    <a href="https://codeforces.com/profile/Chill-guy" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Chill-guy</span></a>
+                    <a href="https://github.com/Adityag0243" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Adityag0243</span></a>
+                    <a href="https://leetcode.com/u/Chill-guy" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Chill-guy</span></a>
                 </div>
                 <a href="https://drive.google.com/drive/folders/1CrM5UNFaRxvPpXgrykcwuJWvLtVSvb1W" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
@@ -178,11 +176,11 @@
                 <h2>Krishna Kishore</h2>
                 <span class="tagline">JEE: 98.60% | Advanced Rank 25613 | Elite Coder</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Dragon_Krissash</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">DragonKrissash</span></div>
-                    <div class="data-row"><span class="data-label">LinkedIn</span><span class="data-val">/in/krishnakishore1119</span></div>
+                    <a href="https://codeforces.com/profile/Dragon_Krissash" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Dragon_Krissash</span></a>
+                    <a href="https://github.com/DragonKrissash" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">DragonKrissash</span></a>
+                    <a href="https://leetcode.com/u/dragon_krissash" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">dragon_krissash</span></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1z8uC5huCwMHiA5UD3PXHr_BvINJdVIG7/view" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/file/d/1z8uC5huCwMHiA5UD3PXHr_BvINJdVIG7/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
@@ -199,9 +197,9 @@
                 <h2>Rohit Sah</h2>
                 <span class="tagline">JEE: 89% | FullStack Intern @ PhysicsWallah</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">NadeX</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">rohitsah12</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">nadexx</span></div>
+                    <a href="https://codeforces.com/profile/NadeX" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">NadeX</span></a>
+                    <a href="https://github.com/rohitsah12" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">rohitsah12</span></a>
+                    <a href="https://leetcode.com/u/nadexx" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">nadexx</span></a>
                 </div>
                 <a href="https://drive.google.com/file/d/1T1daje4h6ZgS9DA2QFrSlOX12KP7-gMI/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
@@ -220,11 +218,11 @@
                 <h2>Allan Joseph</h2>
                 <span class="tagline">JEE: 91% | Competitive Programming Expert</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ZenStein30</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">allanjoseph01</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">_Allan_Joseph_30_</span></div>
+                    <a href="https://codeforces.com/profile/ZenStein30" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ZenStein30</span></a>
+                    <a href="https://github.com/allanjoseph01" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">allanjoseph01</span></a>
+                    <a href="https://leetcode.com/u/_Allan_Joseph_30_" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">_Allan_Joseph_30_</span></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1DzJrip8kYz3zPdVZD9qusKzDWH6pkczO/view" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/file/d/1DzJrip8kYz3zPdVZD9qusKzDWH6pkczO/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
@@ -241,11 +239,11 @@
                 <h2>Aadhar Goel</h2>
                 <span class="tagline">Codeforces Specialist (1409) | Mastered 1000+ DSA</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">goel_aadhaar</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">goel-aadhaar</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">goel_aadhaar</span></div>
+                    <a href="https://codeforces.com/profile/goel_aadhaar" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">goel_aadhaar</span></a>
+                    <a href="https://github.com/goel-aadhaar" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">goel-aadhaar</span></a>
+                    <a href="https://leetcode.com/u/goel_aadhaar" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">goel_aadhaar</span></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1rhHHmBVAFpvguNV8caauYHa-k-6XfkZY/view" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/file/d/1rhHHmBVAFpvguNV8caauYHa-k-6XfkZY/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
@@ -262,11 +260,11 @@
                 <h2>Rohit Makani</h2>
                 <span class="tagline">JEE: 95% | ML Intern @ PW IOI</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ROHITji</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">RohitMakaniProfile</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">coderboyRohit</span></div>
+                    <a href="https://codeforces.com/profile/ROHITji" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ROHITji</span></a>
+                    <a href="https://github.com/RohitMakaniProfile" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">RohitMakaniProfile</span></a>
+                    <a href="https://leetcode.com/u/coderboyRohit" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">coderboyRohit</span></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1wVWP5C8foBkLuyZDD4hwI_HLCStMtEwo/view" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/file/d/1wVWP5C8foBkLuyZDD4hwI_HLCStMtEwo/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
@@ -283,11 +281,11 @@
                 <h2>Mitesh Agrawal</h2>
                 <span class="tagline">JEE: 96% | FullStack Intern @ Allo Health</span>
                 <div class="data-links">
-                    <div class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Mitesh_Agrawal</span></div>
-                    <div class="data-row"><span class="data-label">GitHub</span><span class="data-val">Mitesh766</span></div>
-                    <div class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Mitesh_Agrawal_Solver</span></div>
+                    <a href="https://codeforces.com/profile/Mitesh_Agrawal" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Mitesh_Agrawal</span></a>
+                    <a href="https://github.com/Mitesh766" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Mitesh766</span></a>
+                    <a href="https://leetcode.com/u/Mitesh_Agrawal_Solver" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">Mitesh_Agrawal_Solver</span></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1arS3sZD3LcjSeJ6DlyiB9pyzsTWAjG5O/view" target="_blank" class="btn-main">View Full Portfolio</a>
+                <a href="https://drive.google.com/file/d/1arS3sZD3LcjSeJ6DlyiB9pyzsTWAjG5O/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
