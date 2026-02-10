@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOT Profiles | PW IOI Placement Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #020617;
@@ -16,17 +16,53 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
         
+        /* Navigation Section */
         nav {
-            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
-            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 40px; 
+            background: rgba(2, 6, 23, 0.95); 
+            backdrop-filter: blur(15px);
+            position: sticky; 
+            top: 0; 
+            z-index: 9999; 
+            border-bottom: 1px solid var(--glass-border);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
         }
+
         nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
         nav .logo span { color: var(--accent); }
-        nav .links { display: flex; gap: 25px; }
-        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
-        nav .links a:hover, nav .links a.active { color: #fff; }
 
+        nav .links { display: flex; gap: 30px; }
+
+        nav .links a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        nav .links a:hover { 
+            color: #fff; 
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+        }
+
+        nav .links a.active { 
+            color: var(--accent); 
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+        }
+
+        nav .links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+            background-color: var(--accent); transition: width 0.3s ease;
+        }
+        nav .links a:hover::after, nav .links a.active::after { width: 100%; }
+
+        /* Hero & Container */
         .hero { padding: 60px 20px; text-align: center; }
         .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; }
         .hero p { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 10px; }
@@ -49,7 +85,7 @@
             background: rgba(255,255,255,0.03); padding: 10px 15px; border-radius: 8px; border-left: 2px solid var(--accent);
             text-decoration: none; transition: 0.3s;
         }
-        .data-row:hover { background: rgba(56, 189, 248, 0.1); }
+        .data-row:hover { background: rgba(56, 189, 248, 0.15); transform: translateX(5px); }
         .data-label { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; font-weight: 800; }
         .data-val { font-size: 0.8rem; font-family: 'Courier New', monospace; color: #e2e8f0; }
 
@@ -65,7 +101,7 @@
         }
         .btn-main:hover { background: var(--accent); transform: scale(1.02); }
 
-        @media (max-width: 900px) { .profile-card { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { .profile-card { grid-template-columns: 1fr; } nav { padding: 20px; } }
     </style>
 </head>
 <body>
@@ -73,16 +109,16 @@
     <nav>
         <a href="index.html" class="logo">PW <span>IOI</span></a>
         <div class="links">
-            <a href="skills.html"><b>Skills</b></a>
-            <a href="sot.html"><b>SOT</b></a>
-            <a href="som.html"><b>SOM</b></a>
-            <a href="projects.html" class="active"><b>Projects</b></a>
+            <a href="skills.html">SKILLS</a>
+            <a href="sot.html" class="active">SOT</a>
+            <a href="som.html">SOM</a>
+            <a href="projects.html">PROJECTS</a>
         </div>
     </nav>
 
     <div class="hero">
         <p>School of Technology</p>
-        <h1>Student Profiles</h1>
+        <h1>Engineering Talent</h1>
     </div>
 
     <div class="container">
@@ -124,7 +160,7 @@
                 <ul>
                     <li>Codeforces Expert (1647) | CodeChef 3-Star.</li>
                     <li>ICPC Regional Ranks: 1489 (2024), 1041 (2025).</li>
-                    <li>Hackathon Winner – Kisaan Mitra | AlgosStrike Rank 4.</li>
+                    <li>Hackathon Winner – Kisaan Mitra | Vishwas Diwas 2nd Runner-up.</li>
                 </ul>
             </div>
         </div>
@@ -185,9 +221,9 @@
             <div class="achievements-box">
                 <h4>🏆 Key Achievements</h4>
                 <ul>
-                    <li>ICPC Regional Competitor.</li>
-                    <li>Consistent high performer in algorithmic problem solving.</li>
-                    <li>Active developer with focus on high-quality code contributions.</li>
+                    <li>Codeforces Expert | ICPC Regional Competitor.</li>
+                    <li>LinkedIn: linkedin.com/in/krishnakishore1119</li>
+                    <li>Focus on high-quality code contributions and CP.</li>
                 </ul>
             </div>
         </div>
@@ -207,8 +243,8 @@
                 <h4>🏆 Key Achievements</h4>
                 <ul>
                     <li>Coder Army Hackathon – 8th Rank (100+ professional teams).</li>
-                    <li>Gained significant industry exposure at PhysicsWallah.</li>
-                    <li>Strong foundation in full-stack web architectures.</li>
+                    <li>FullStack Intern building tools at PhysicsWallah.</li>
+                    <li>Competitive programming expert and web developer.</li>
                 </ul>
             </div>
         </div>
@@ -228,8 +264,8 @@
                 <h4>🏆 Key Achievements</h4>
                 <ul>
                     <li>Multi-platform CP specialist (Codeforces, LeetCode, GitHub).</li>
-                    <li>Consistent developer focused on logic and scalability.</li>
-                    <li>Deep interest in algorithmic optimizations.</li>
+                    <li>Strong problem-solving and algorithm development skills.</li>
+                    <li>Active developer with consistent coding frequency.</li>
                 </ul>
             </div>
         </div>
@@ -250,7 +286,7 @@
                 <ul>
                     <li>PWHackathon 1st Prize Winner.</li>
                     <li>Solved 1000+ DSA problems with multi-platform mastery.</li>
-                    <li>High-ranking specialist on Codeforces.</li>
+                    <li>High-ranking specialist on Codeforces (Max: 1409).</li>
                 </ul>
             </div>
         </div>
@@ -271,7 +307,7 @@
                 <ul>
                     <li>2nd Runner-Up CMRIT Power BI Data Analysis Hackathon.</li>
                     <li>Top 10 Rank in PW Internal Employees Hackathon.</li>
-                    <li>Advanced expertise in Machine Learning & Analytics.</li>
+                    <li>Machine Learning expertise and industry data analysis experience.</li>
                 </ul>
             </div>
         </div>
@@ -300,6 +336,3 @@
     </div>
 </body>
 </html>
-
-
-
