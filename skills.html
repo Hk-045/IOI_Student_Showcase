@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Skillsets | PW IOI</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg: #020617;
@@ -26,17 +28,16 @@
             background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
         }
 
-        /* Bold Navigation Section */
         nav {
-            padding: 20px 40px; 
-            background: rgba(2, 6, 23, 0.95); 
+            padding: 20px 40px;
+            background: rgba(2, 6, 23, 0.95);
             backdrop-filter: blur(15px);
-            position: sticky; 
-            top: 0; 
-            z-index: 9999; 
+            position: sticky;
+            top: 0;
+            z-index: 9999;
             border-bottom: 1px solid var(--glass-border);
-            display: flex; 
-            justify-content: space-between; 
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -45,186 +46,260 @@
 
         nav .links { display: flex; gap: 30px; }
 
-        nav .links a { 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            font-weight: 700; /* Bold */
+        nav .links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
             text-transform: uppercase;
         }
 
-        nav .links a:hover { 
-            color: #fff; 
-            transform: scale(1.1); /* Scale Up Transition */
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8); /* Glow */
+        nav .links a:hover {
+            color: #fff;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
         }
 
-        nav .links a.active { 
-            color: var(--accent); 
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-        }
-
-        nav .links a::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
-            background-color: var(--accent); transition: width 0.3s ease;
-        }
-        nav .links a:hover::after, nav .links a.active::after { width: 100%; }
-
-        /* Header & Toggle */
         .header-box { text-align: center; padding: 60px 20px 40px; }
-        .header-box h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 30px; }
-        
-        .toggle-wrap {
-            display: inline-flex; background: var(--glass); padding: 6px; border-radius: 100px;
-            border: 1px solid var(--glass-border); margin-bottom: 40px;
-        }
-        .tgl-btn {
-            padding: 12px 35px; border-radius: 100px; cursor: pointer; border: none;
-            background: transparent; color: var(--text-muted); font-weight: 700; transition: 0.3s;
-        }
-        .tgl-btn.active.sot { background: var(--sot-accent); color: #020617; box-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
-        .tgl-btn.active.som { background: var(--som-accent); color: #020617; box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
 
-        /* Grids */
+        .toggle-wrap {
+            display: inline-flex;
+            background: var(--glass);
+            padding: 6px;
+            border-radius: 100px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 40px;
+        }
+
+        .tgl-btn {
+            padding: 12px 35px;
+            border-radius: 100px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .tgl-btn.active.sot { background: var(--sot-accent); color: #020617; }
+        .tgl-btn.active.som { background: var(--som-accent); color: #020617; }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
-        .skills-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; animation: fadeInUp 0.5s ease; }
+
+        .skills-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .skills-grid.active { display: grid; }
 
-        /* Cards */
-        .skill-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px; padding: 30px; transition: 0.3s; }
-        .skill-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
-        .skill-card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .skill-card h3 span { font-size: 1.4rem; }
-
-        .tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
-        .tag { 
-            padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; 
-            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); color: #cbd5e1; 
+        .skill-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px;
+            transition: 0.3s;
         }
 
-        .sot .tag:hover { color: var(--sot-accent); border-color: var(--sot-accent); }
-        .som .tag:hover { color: var(--som-accent); border-color: var(--som-accent); }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
+        .tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .tag {
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            color: #cbd5e1;
+        }
+
         @media (max-width: 768px) { nav { padding: 20px; } .links { display: none; } }
     </style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">PW <span>IOI</span></a>
-        <div class="links">
-            <a href="skills.html"><b>Skills</b></a>
-            <a href="sot.html"><b>SOT</b></a>
-            <a href="som.html"><b>SOM</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-        </div>
-    </nav>
-
-    <div class="header-box">
-        <h1>Core Skillsets</h1>
-        <div class="toggle-wrap">
-            <button class="tgl-btn active sot" onclick="toggleSkills('sot', this)">School of Technology</button>
-            <button class="tgl-btn som" onclick="toggleSkills('som', this)">School of Management</button>
-        </div>
+<nav>
+    <a href="index.html" class="logo">PW <span>IOI</span></a>
+    <div class="links">
+        <a href="skills.html"><b>Skills</b></a>
+        <a href="sot.html"><b>SOT</b></a>
+        <a href="som.html"><b>SOM</b></a>
+        <a href="projects.html"><b>Projects</b></a>
     </div>
+</nav>
 
-    <div class="container">
-        <div id="sot-skills" class="skills-grid active sot">
-            <div class="skill-card">
-                <h3><span>💻</span> Development</h3>
-                <div class="tag-wrap">
-                    <span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Next.js</span>
-                    <span class="tag">Node.js</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Express Js</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🧠</span> AI & Machine Learning</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Deep Learning</span><span class="tag">LLMs</span><span class="tag">GenAI</span><span class="tag">Agentic AI</span><span class="tag">Prompt Engineering</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🗄️</span> Databases</h3>
-                <div class="tag-wrap">
-                    <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Firebase</span><span class="tag">Redis</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>📊</span> Analytics</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Python (Pandas/Numpy)</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Hypothesis Testing</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>⚡</span> Problem Solving (DSA)</h3>
-                <div class="tag-wrap">
-                    <span class="tag">C++</span><span class="tag">Java</span><span class="tag">Python</span><span class="tag">Trees & Graphs</span><span class="tag">Dynamic Programming</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>📱</span> Mobile & UI/UX</h3>
-                <div class="tag-wrap">
-                    <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">Figma</span><span class="tag">User Research</span><span class="tag">Wireframing</span>
-                </div>
-            </div>
-        </div>
-
-        <div id="som-skills" class="skills-grid som">
-            <div class="skill-card">
-                <h3><span>📢</span> Marketing & Branding</h3>
-                <div class="tag-wrap">
-                    <span class="tag">GTM Curation</span><span class="tag">Digital Marketing</span><span class="tag">Brand Positioning</span><span class="tag">Content Strategy</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🤝</span> Sales & Business Dev</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Lead Generation</span><span class="tag">Client Management</span><span class="tag">Negotiation</span><span class="tag">B2B Sales</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🚀</span> Management & Strategy</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Product Management</span><span class="tag">MVP Planning</span><span class="tag">Operations</span><span class="tag">Leadership</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🔎</span> Research Frameworks</h3>
-                <div class="tag-wrap">
-                    <span class="tag">SWOT</span><span class="tag">PESTEL</span><span class="tag">Porter's 5 Forces</span><span class="tag">Market Research</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🤖</span> Automation & Tools</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Excel (Advanced)</span><span class="tag">Google Sheets</span><span class="tag">Shopify Mgmt</span><span class="tag">AI Tools</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3><span>🗣️</span> Communication</h3>
-                <div class="tag-wrap">
-                    <span class="tag">Storytelling</span><span class="tag">Copywriting</span><span class="tag">Presentation Design</span><span class="tag">Business Comm</span>
-                </div>
-            </div>
-        </div>
+<div class="header-box">
+    <h1>Core Skillsets</h1>
+    <div class="toggle-wrap">
+        <button class="tgl-btn active sot" onclick="toggleSkills('sot', this)">School of Technology</button>
+        <button class="tgl-btn som" onclick="toggleSkills('som', this)">School of Management</button>
     </div>
+</div>
 
-    <script>
-        function toggleSkills(type, btn) {
-            document.querySelectorAll('.skills-grid').forEach(g => g.classList.remove('active'));
-            document.querySelectorAll('.tgl-btn').forEach(b => b.classList.remove('active', 'sot', 'som'));
-            document.getElementById(type + '-skills').classList.add('active');
-            btn.classList.add('active', type);
-        }
-    </script>
+<div class="container">
+
+<!-- ===================== SOT SKILLS ===================== -->
+<div id="sot-skills" class="skills-grid active sot">
+
+<div class="skill-card">
+<h3>💻 Development</h3>
+<div class="tag-wrap">
+<span class="tag">HTML/CSS</span>
+<span class="tag">JavaScript</span>
+<span class="tag">TypeScript</span>
+<span class="tag">React</span>
+<span class="tag">Next.js</span>
+<span class="tag">Node.js</span>
+<span class="tag">FastAPI</span>
+<span class="tag">Docker</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🧠 AI & ML</h3>
+<div class="tag-wrap">
+<span class="tag">Deep Learning</span>
+<span class="tag">LLMs</span>
+<span class="tag">GenAI</span>
+<span class="tag">LangChain</span>
+<span class="tag">LangGraph</span>
+<span class="tag">Agentic AI</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🗄️ Databases</h3>
+<div class="tag-wrap">
+<span class="tag">MySQL</span>
+<span class="tag">PostgreSQL</span>
+<span class="tag">MongoDB</span>
+<span class="tag">Firebase</span>
+<span class="tag">Redis</span>
+<span class="tag">Vector DB</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>📊 Analytics</h3>
+<div class="tag-wrap">
+<span class="tag">Python (Pandas)</span>
+<span class="tag">Power BI</span>
+<span class="tag">Tableau</span>
+<span class="tag">Statistics</span>
+<span class="tag">Data Storytelling</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>⚡ Problem Solving</h3>
+<div class="tag-wrap">
+<span class="tag">C++</span>
+<span class="tag">Java</span>
+<span class="tag">Python</span>
+<span class="tag">Competitive Programming</span>
+<span class="tag">Graphs</span>
+<span class="tag">Dynamic Programming</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>📱 Mobile & UI/UX</h3>
+<div class="tag-wrap">
+<span class="tag">React Native</span>
+<span class="tag">Flutter</span>
+<span class="tag">Figma</span>
+<span class="tag">User Research</span>
+<span class="tag">Design Systems</span>
+</div>
+</div>
+
+</div>
+
+<!-- ===================== SOM SKILLS ===================== -->
+<div id="som-skills" class="skills-grid som">
+
+<div class="skill-card">
+<h3>📢 Marketing & Branding</h3>
+<div class="tag-wrap">
+<span class="tag">GTM Strategy</span>
+<span class="tag">Digital Marketing</span>
+<span class="tag">Brand Positioning</span>
+<span class="tag">Content Strategy</span>
+<span class="tag">SEO</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🤝 Sales & Business Dev</h3>
+<div class="tag-wrap">
+<span class="tag">Lead Generation</span>
+<span class="tag">Client Management</span>
+<span class="tag">Negotiation</span>
+<span class="tag">B2B Sales</span>
+<span class="tag">CRM Tools</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🚀 Management & Strategy</h3>
+<div class="tag-wrap">
+<span class="tag">Product Management</span>
+<span class="tag">MVP Planning</span>
+<span class="tag">Operations</span>
+<span class="tag">Leadership</span>
+<span class="tag">Agile</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🔎 Research Frameworks</h3>
+<div class="tag-wrap">
+<span class="tag">SWOT</span>
+<span class="tag">PESTEL</span>
+<span class="tag">Porter’s 5 Forces</span>
+<span class="tag">Market Research</span>
+<span class="tag">User Interviews</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🤖 Automation & Tools</h3>
+<div class="tag-wrap">
+<span class="tag">Excel (Advanced)</span>
+<span class="tag">Google Sheets</span>
+<span class="tag">Shopify</span>
+<span class="tag">No-Code Tools</span>
+<span class="tag">Zapier</span>
+</div>
+</div>
+
+<div class="skill-card">
+<h3>🗣️ Communication</h3>
+<div class="tag-wrap">
+<span class="tag">Storytelling</span>
+<span class="tag">Copywriting</span>
+<span class="tag">Presentation Design</span>
+<span class="tag">Business Comm</span>
+<span class="tag">Public Speaking</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function toggleSkills(type, btn) {
+document.querySelectorAll('.skills-grid').forEach(g => g.classList.remove('active'));
+document.querySelectorAll('.tgl-btn').forEach(b => b.classList.remove('active', 'sot', 'som'));
+document.getElementById(type + '-skills').classList.add('active');
+btn.classList.add('active', type);
+}
+</script>
+
 </body>
-
 </html>
-
-
-
