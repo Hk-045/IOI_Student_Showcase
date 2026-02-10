@@ -18,7 +18,13 @@
 --text-muted: #94a3b8;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+/* RESET */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 body {
 background-color: var(--bg);
@@ -28,6 +34,7 @@ overflow-x: hidden;
 background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
 }
 
+/* NAVBAR */
 nav {
 padding: 20px 40px;
 background: rgba(2, 6, 23, 0.95);
@@ -41,10 +48,19 @@ justify-content: space-between;
 align-items: center;
 }
 
-nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
+nav .logo {
+color: white;
+text-decoration: none;
+font-weight: 800;
+font-size: 1.2rem;
+}
+
 nav .logo span { color: var(--accent); }
 
-nav .links { display: flex; gap: 30px; }
+nav .links {
+display: flex;
+gap: 30px;
+}
 
 nav .links a {
 color: var(--text-muted);
@@ -53,11 +69,20 @@ font-size: 0.9rem;
 font-weight: 700;
 letter-spacing: 1px;
 text-transform: uppercase;
-transition: all 0.3s ease;
 }
 
-.header-box { text-align: center; padding: 60px 20px 40px; }
+/* HEADER */
+.header-box {
+text-align: center;
+padding: 70px 20px 40px;
+}
 
+.header-box h1 {
+font-size: clamp(2.5rem, 5vw, 3.5rem);
+margin-bottom: 30px;
+}
+
+/* TOGGLE */
 .toggle-wrap {
 display: inline-flex;
 background: var(--glass);
@@ -78,29 +103,57 @@ font-weight: 700;
 transition: 0.3s;
 }
 
-.tgl-btn.active.sot { background: var(--sot-accent); color: #020617; }
-.tgl-btn.active.som { background: var(--som-accent); color: #020617; }
+.tgl-btn.active.sot {
+background: var(--sot-accent);
+color: #020617;
+}
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
+.tgl-btn.active.som {
+background: var(--som-accent);
+color: #020617;
+}
 
-.skills-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-.skills-grid.active { display: grid; }
+/* GRID */
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px 100px;
+}
 
+.skills-grid {
+display: none;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 25px;
+}
+
+.skills-grid.active {
+display: grid;
+}
+
+/* CARD — PROPER SPACING */
 .skill-card {
 background: var(--glass);
 border: 1px solid var(--glass-border);
 border-radius: 24px;
-padding: 30px;
+padding: 28px 26px;   /* uniform padding */
 transition: 0.3s;
 }
 
-.skill-card:hover {
-transform: translateY(-5px);
-background: rgba(255,255,255,0.05);
+/* Heading alignment */
+.skill-card h3 {
+font-size: 1.1rem;
+margin-bottom: 16px;   /* consistent spacing */
 }
 
-.tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+/* Tags wrapper alignment */
+.tag-wrap {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 4px;
+}
 
+/* Tag styling */
 .tag {
 padding: 6px 14px;
 border-radius: 8px;
@@ -111,7 +164,11 @@ border: 1px solid var(--glass-border);
 color: #cbd5e1;
 }
 
-@media (max-width: 768px) { nav { padding: 20px; } .links { display: none; } }
+/* Mobile */
+@media (max-width: 768px) {
+nav { padding: 20px; }
+nav .links { display: none; }
+}
 </style>
 </head>
 
@@ -251,10 +308,10 @@ color: #cbd5e1;
 </div>
 
 <div class="skill-card">
-<h3>🔎 Business Research</h3>
+<h3>🔎 Strategy & Research Frameworks</h3>
 <div class="tag-wrap">
-<span class="tag">SWOT</span>
-<span class="tag">PESTEL</span>
+<span class="tag">SWOT Analysis</span>
+<span class="tag">PESTEL Analysis</span>
 <span class="tag">Porter’s 5 Forces</span>
 <span class="tag">Market Research</span>
 <span class="tag">User Interviews</span>
