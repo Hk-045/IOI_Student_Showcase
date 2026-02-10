@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovation Showcase | PW IOI</title>
+    <title>Innovation Portfolio | PW IOI</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #020617;
             --accent: #6366f1;
-            --secondary: #22d3ee;
+            --secondary: #38bdf8;
             --glass: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
             --text-muted: #94a3b8;
@@ -18,55 +18,38 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #e5e7eb; line-height: 1.6; overflow-x: hidden; }
         
-        /* Navigation Section */
         nav {
-            padding: 20px 40px; 
-            background: rgba(2, 6, 23, 0.95); 
-            backdrop-filter: blur(15px);
-            position: sticky; 
-            top: 0; 
-            z-index: 9999; 
-            border-bottom: 1px solid var(--glass-border);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
+            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
         }
         nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
         nav .logo span { color: var(--secondary); }
         nav .links { display: flex; gap: 30px; }
         nav .links a { 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            letter-spacing: 1px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; text-transform: uppercase;
         }
-        nav .links a:hover { color: #fff; transform: scale(1.1); text-shadow: 0 0 10px rgba(34, 211, 238, 0.8); }
-        nav .links a.active { color: var(--secondary); text-shadow: 0 0 15px rgba(34, 211, 238, 0.5); }
-        nav .links a::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
-            background-color: var(--secondary); transition: width 0.3s ease;
-        }
+        nav .links a:hover { color: #fff; transform: scale(1.1); text-shadow: 0 0 10px rgba(56, 189, 248, 0.8); }
+        nav .links a.active { color: var(--secondary); text-shadow: 0 0 15px rgba(56, 189, 248, 0.5); }
+        nav .links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--secondary); transition: width 0.3s ease; }
         nav .links a:hover::after, nav .links a.active::after { width: 100%; }
 
         .hero { padding: 80px 20px 40px; text-align: center; }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
         section { max-width: 1240px; margin: auto; padding: 40px 20px; }
         section h2 { font-size: 2.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; color: #fff; }
         section h2 span { width: 40px; height: 4px; background: var(--accent); border-radius: 10px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 25px; }
-        
         .card { 
             background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; 
             padding: 30px; transition: 0.4s; text-decoration: none; color: inherit; display: flex; flex-direction: column;
         }
         .card:hover { transform: translateY(-8px); border-color: var(--secondary); background: rgba(255,255,255,0.06); }
 
-        .card h3 { font-size: 1.4rem; color: #fff; margin-bottom: 10px; }
+        .card h3 { font-size: 1.4rem; color: #fff; margin-bottom: 8px; }
         .stack { font-size: 0.75rem; color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
         
         .card ul { list-style: none; margin-bottom: 20px; flex-grow: 1; }
@@ -78,7 +61,7 @@
         .metric-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
         .metric-val { font-size: 1rem; color: var(--success); font-weight: 800; }
 
-        .badge-ext { background: rgba(99, 102, 241, 0.15); color: var(--accent); font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; display: inline-block; text-transform: uppercase; }
+        .badge { background: rgba(99, 102, 241, 0.15); color: var(--secondary); font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; display: inline-block; text-transform: uppercase; }
         .visit-link { margin-top: 15px; font-size: 0.85rem; color: #fff; font-weight: 700; text-decoration: underline; }
 
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } nav { padding: 20px; } }
@@ -97,24 +80,24 @@
     </nav>
 
     <div class="hero">
-        <h1>Project Portfolio</h1>
-        <p>A directory of core technical builds, student startups, and industry-scale solutions.</p>
+        <h1>Innovation Showcase</h1>
+        <p>A comprehensive directory of technical engineering, external industry projects, and student-led startups.</p>
     </div>
 
     <section>
-        <h2><span></span>Core Student Technical Projects</h2>
+        <h2><span></span>Internal Technical Projects</h2>
         <div class="grid">
             <a href="https://indiecode.vercel.app/" target="_blank" class="card">
                 <h3>IndieCode</h3>
                 <p class="stack">React · Node · Express · Redis</p>
                 <ul>
                     <li>Full-stack CP platform with real-time code editing.</li>
-                    <li>Scalable execution engine via Redis integration.</li>
-                    <li>Secure RESTful APIs for competitive contests.</li>
+                    <li>Secure session handling via Redis integration.</li>
+                    <li>Scalable RESTful APIs for competitive contests.</li>
                 </ul>
                 <div class="metrics-row">
                     <div class="metric-item"><p class="metric-label">Users</p><p class="metric-val">2,000+</p></div>
-                    <div class="metric-item"><p class="metric-label">Performance</p><p class="metric-val">Real-time</p></div>
+                    <div class="metric-item"><p class="metric-label">Status</p><p class="metric-val">Live</p></div>
                 </div>
             </a>
 
@@ -122,28 +105,79 @@
                 <h3>IntelliResume</h3>
                 <p class="stack">Python · Next.js · TypeScript · AI</p>
                 <ul>
-                    <li>AI analyzer optimizing resumes for ATS.</li>
-                    <li>Calculates compatibility scores instantly.</li>
-                    <li>Skill gap insights and real-time builder.</li>
+                    <li>AI analyzer optimizing resumes for modern ATS.</li>
+                    <li>Instantly calculates compatibility scores.</li>
+                    <li>Provides actionable skill gap insights.</li>
                 </ul>
                 <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Success Rate</p><p class="metric-val">+65%</p></div>
-                    <div class="metric-item"><p class="metric-label">Efficiency</p><p class="metric-val">Instant</p></div>
+                    <div class="metric-item"><p class="metric-label">ATS Speed</p><p class="metric-val">Instant</p></div>
+                    <div class="metric-item"><p class="metric-label">Users</p><p class="metric-val">1,000+</p></div>
+                </div>
+            </a>
+
+            <a href="https://jobsphere.online/" target="_blank" class="card">
+                <h3>JobSphere</h3>
+                <p class="stack">Next.js · PostgreSQL · Prisma</p>
+                <ul>
+                    <li>End-to-end job portal for campus recruitment.</li>
+                    <li>Automated applicant tracking and hiring status.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Efficiency</p><p class="metric-val">High</p></div>
+                    <div class="metric-item"><p class="metric-label">Tech</p><p class="metric-val">Fullstack</p></div>
                 </div>
             </a>
 
             <a href="https://minli.info/" target="_blank" class="card">
                 <h3>Minli</h3>
-                <p class="stack">MongoDB · Express · React · Node</p>
+                <p class="stack">MERN Stack · Analytics API</p>
                 <ul>
-                    <li>URL shortener with advanced analytics.</li>
-                    <li>Device & browser-based traffic tracking.</li>
-                    <li>QR codes and link password protection.</li>
+                    <li>URL shortener with deep device/traffic analytics.</li>
+                    <li>QR code generation and password protection.</li>
+                </ul>
+                <p class="visit-link">Visit Minli →</p>
+            </a>
+
+            <a href="https://structify.vercel.app/" target="_blank" class="card">
+                <h3>Data Structure Visualizer</h3>
+                <p class="stack">React.js · GSAP · Tailwind</p>
+                <ul>
+                    <li>Visualizes 8+ data structures with animations.</li>
+                    <li>Real-time logic flow for algorithmic clarity.</li>
+                </ul>
+                <p class="visit-link">Visit Structify →</p>
+            </a>
+
+            <div class="card">
+                <h3>CryptoSentinel</h3>
+                <p class="stack">React · Express · Ollama AI</p>
+                <ul>
+                    <li>Sentiment analysis for 50+ coins with 85% accuracy.</li>
+                    <li>Reduces market research time by 70%.</li>
                 </ul>
                 <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Uptime</p><p class="metric-val">99.9%</p></div>
-                    <div class="metric-item"><p class="metric-label">Analytics</p><p class="metric-val">Live</p></div>
+                    <div class="metric-item"><p class="metric-label">Research</p><p class="metric-val">-70% Time</p></div>
                 </div>
+            </div>
+
+            <a href="https://www.pwleapx.com/" target="_blank" class="card">
+                <h3>PWLeapX</h3>
+                <p class="stack">React · Framer Motion · TypeScript</p>
+                <ul>
+                    <li>Tech-execution hub connecting startups with talent.</li>
+                    <li>Supported 20+ startups; 500+ founder network.</li>
+                </ul>
+                <p class="visit-link">Visit Website →</p>
+            </a>
+
+            <a href="https://github.com/RohitMakaniProfile/youtube-study-assistant" target="_blank" class="card">
+                <h3>EduTube Coach</h3>
+                <p class="stack">FastAPI · LangChain · Whisper</p>
+                <ul>
+                    <li>AI pipeline converting video to revision flashcards.</li>
+                    <li>Multilingual prompting with contextual grounding.</li>
+                </ul>
+                <p class="visit-link">View Repo →</p>
             </a>
         </div>
     </section>
@@ -151,94 +185,56 @@
     <section>
         <h2><span></span>External Industry Projects</h2>
         <div class="grid">
-            
             <div class="card">
-                <span class="badge-ext">EdTech</span>
+                <span class="badge">EdTech</span>
                 <h3>Student Profile (ERP & LMS)</h3>
                 <p class="stack">Centralized Academic Hub</p>
                 <ul>
-                    <li>Centralized platform for students, teachers, and admins.</li>
-                    <li>Dashboards for attendance & academic tracking.</li>
-                    <li>LMS assessment and content management system.</li>
+                    <li>ERP & LMS enabling collaboration and tracking.</li>
+                    <li>Student, teacher & admin dashboards.</li>
                 </ul>
                 <div class="metrics-row">
                     <div class="metric-item"><p class="metric-label">Users</p><p class="metric-val">1,500+</p></div>
-                    <div class="metric-item"><p class="metric-label">Productivity</p><p class="metric-val">40% Faster</p></div>
+                    <div class="metric-item"><p class="metric-label">Productivity</p><p class="metric-val">+40%</p></div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="badge-ext">AI & Automation</span>
-                <h3>Koncite (AI Construction Audit)</h3>
+                <span class="badge">AI & Automation</span>
+                <h3>Koncite (AI Auditing)</h3>
                 <p class="stack">Voice-based Multilingual Platform</p>
                 <ul>
                     <li>Converts voice inputs into structured audit reports.</li>
-                    <li>Multilingual input support for construction site audits.</li>
-                    <li>Automated audit report generation via AI chatbot.</li>
+                    <li>60% reduction in reporting time.</li>
                 </ul>
                 <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Time Saved</p><p class="metric-val">60% Reduction</p></div>
-                    <div class="metric-item"><p class="metric-label">Reach</p><p class="metric-val">500+ Users</p></div>
+                    <div class="metric-item"><p class="metric-label">Time Saved</p><p class="metric-val">60%</p></div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="badge-ext">HealthTech</span>
-                <h3>YourLabs (Doctor App)</h3>
-                <p class="stack">Appointment & Management App</p>
+                <span class="badge">Business Solutions</span>
+                <h3>Digital Branding & Growth</h3>
+                <p class="stack">Execution & Performance</p>
                 <ul>
-                    <li>End-to-end doctor discovery and booking system.</li>
-                    <li>Patient records management and payment integration.</li>
-                    <li>Admin analytics for laboratory efficiency tracking.</li>
+                    <li>Built awareness and revenue via performance marketing.</li>
+                    <li>Audience growth of 3.4X in 1.5 months.</li>
                 </ul>
                 <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Efficiency</p><p class="metric-val">40% Faster</p></div>
-                    <div class="metric-item"><p class="metric-label">Automation</p><p class="metric-val">50% High</p></div>
+                    <div class="metric-item"><p class="metric-label">Revenue</p><p class="metric-val">4X Increase</p></div>
                 </div>
             </div>
 
             <div class="card">
-                <span class="badge-ext">FinTech</span>
-                <h3>Fintech AI App</h3>
+                <span class="badge">FinTech</span>
+                <h3>Fintech App</h3>
                 <p class="stack">Loan Discovery & AI Monitoring</p>
                 <ul>
-                    <li>Simplifies loan application and monitoring processes.</li>
-                    <li>AI-powered recommendations for loan refinancing.</li>
-                    <li>Application tracking with real-time status updates.</li>
+                    <li>Simplifies loan discovery and application monitoring.</li>
+                    <li>AI-powered recommendations for refinancing.</li>
                 </ul>
                 <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Decision Speed</p><p class="metric-val">55% Faster</p></div>
-                    <div class="metric-item"><p class="metric-label">Friction</p><p class="metric-val">45% Lower</p></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="badge-ext">Business Solutions</span>
-                <h3>Digital Branding Execution</h3>
-                <p class="stack">Performance & Content Strategy</p>
-                <ul>
-                    <li>Builds awareness and early revenue via social media.</li>
-                    <li>Strategic performance marketing and audience targeting.</li>
-                    <li>Scalable content execution for brand awareness.</li>
-                </ul>
-                <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Revenue Growth</p><p class="metric-val">4X Increase</p></div>
-                    <div class="metric-item"><p class="metric-label">Audience</p><p class="metric-val">3.4X Growth</p></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="badge-ext">AI & Automation</span>
-                <h3>Sales Auditing Platform</h3>
-                <p class="stack">CRM & API Integrated Audit</p>
-                <ul>
-                    <li>Automated sales analysis integrated with CRM systems.</li>
-                    <li>AI-enabled API integrations for real-time audit analysis.</li>
-                    <li>Automated reporting pipelines for sales managers.</li>
-                </ul>
-                <div class="metrics-row">
-                    <div class="metric-item"><p class="metric-label">Audit Speed</p><p class="metric-val">50% Faster</p></div>
-                    <div class="metric-item"><p class="metric-label">Integrations</p><p class="metric-val">CRM/API</p></div>
+                    <div class="metric-item"><p class="metric-label">Decision</p><p class="metric-val">55% Faster</p></div>
                 </div>
             </div>
         </div>
@@ -253,7 +249,6 @@
                 <ul>
                     <li>Redistributes surplus meals to reduce food waste.</li>
                     <li>Helps businesses recover value from unsold items.</li>
-                    <li>Sustainable model providing affordable high-quality meals.</li>
                 </ul>
             </div>
             <div class="card">
@@ -262,7 +257,6 @@
                 <ul>
                     <li>Wellness brand for lab-certified gemstones.</li>
                     <li>Tailored products based on zodiac energies.</li>
-                    <li>Authenticity-first approach with certified stones.</li>
                 </ul>
             </div>
         </div>
