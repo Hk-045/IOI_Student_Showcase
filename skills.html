@@ -1,155 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core Skillsets | PW IOI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Skillsets | PW IOI</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg: #020617;
-            --sot-accent: #22d3ee;
-            --som-accent: #fbbf24;
-            --accent: #38bdf8;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-muted: #94a3b8;
-        }
+<style>
+:root {
+--bg: #020617;
+--sot-accent: #22d3ee;
+--som-accent: #fbbf24;
+--accent: #38bdf8;
+--glass: rgba(255, 255, 255, 0.03);
+--glass-border: rgba(255, 255, 255, 0.1);
+--text-muted: #94a3b8;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-        body {
-            background-color: var(--bg);
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
-        }
+body {
+background-color: var(--bg);
+color: #fff;
+min-height: 100vh;
+overflow-x: hidden;
+background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+}
 
-        nav {
-            padding: 20px 40px;
-            background: rgba(2, 6, 23, 0.95);
-            backdrop-filter: blur(15px);
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+nav {
+padding: 20px 40px;
+background: rgba(2, 6, 23, 0.95);
+backdrop-filter: blur(15px);
+position: sticky;
+top: 0;
+z-index: 9999;
+border-bottom: 1px solid var(--glass-border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-        nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
-        nav .logo span { color: var(--accent); }
+nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
+nav .logo span { color: var(--accent); }
 
-        nav .links { display: flex; gap: 30px; }
+nav .links { display: flex; gap: 30px; }
 
-        nav .links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-        }
+nav .links a {
+color: var(--text-muted);
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: uppercase;
+transition: all 0.3s ease;
+}
 
-        nav .links a:hover {
-            color: #fff;
-            transform: scale(1.1);
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-        }
+.header-box { text-align: center; padding: 60px 20px 40px; }
 
-        .header-box { text-align: center; padding: 60px 20px 40px; }
+.toggle-wrap {
+display: inline-flex;
+background: var(--glass);
+padding: 6px;
+border-radius: 100px;
+border: 1px solid var(--glass-border);
+margin-bottom: 40px;
+}
 
-        .toggle-wrap {
-            display: inline-flex;
-            background: var(--glass);
-            padding: 6px;
-            border-radius: 100px;
-            border: 1px solid var(--glass-border);
-            margin-bottom: 40px;
-        }
+.tgl-btn {
+padding: 12px 35px;
+border-radius: 100px;
+cursor: pointer;
+border: none;
+background: transparent;
+color: var(--text-muted);
+font-weight: 700;
+transition: 0.3s;
+}
 
-        .tgl-btn {
-            padding: 12px 35px;
-            border-radius: 100px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            color: var(--text-muted);
-            font-weight: 700;
-            transition: 0.3s;
-        }
+.tgl-btn.active.sot { background: var(--sot-accent); color: #020617; }
+.tgl-btn.active.som { background: var(--som-accent); color: #020617; }
 
-        .tgl-btn.active.sot { background: var(--sot-accent); color: #020617; }
-        .tgl-btn.active.som { background: var(--som-accent); color: #020617; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
+.skills-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.skills-grid.active { display: grid; }
 
-        .skills-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .skills-grid.active { display: grid; }
+.skill-card {
+background: var(--glass);
+border: 1px solid var(--glass-border);
+border-radius: 24px;
+padding: 30px;
+transition: 0.3s;
+}
 
-        .skill-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 30px;
-            transition: 0.3s;
-        }
+.skill-card:hover {
+transform: translateY(-5px);
+background: rgba(255,255,255,0.05);
+}
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.05);
-        }
+.tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
 
-        .tag-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+padding: 6px 14px;
+border-radius: 8px;
+font-size: 0.8rem;
+font-weight: 600;
+background: rgba(255,255,255,0.03);
+border: 1px solid var(--glass-border);
+color: #cbd5e1;
+}
 
-        .tag {
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--glass-border);
-            color: #cbd5e1;
-        }
-
-        @media (max-width: 768px) { nav { padding: 20px; } .links { display: none; } }
-    </style>
+@media (max-width: 768px) { nav { padding: 20px; } .links { display: none; } }
+</style>
 </head>
 
 <body>
 
 <nav>
-    <a href="index.html" class="logo">PW <span>IOI</span></a>
-    <div class="links">
-        <a href="skills.html"><b>Skills</b></a>
-        <a href="sot.html"><b>SOT</b></a>
-        <a href="som.html"><b>SOM</b></a>
-        <a href="projects.html"><b>Projects</b></a>
-    </div>
+<a href="index.html" class="logo">PW <span>IOI</span></a>
+<div class="links">
+<a href="skills.html"><b>Skills</b></a>
+<a href="sot.html"><b>SOT</b></a>
+<a href="som.html"><b>SOM</b></a>
+<a href="projects.html"><b>Projects</b></a>
+</div>
 </nav>
 
 <div class="header-box">
-    <h1>Core Skillsets</h1>
-    <div class="toggle-wrap">
-        <button class="tgl-btn active sot" onclick="toggleSkills('sot', this)">School of Technology</button>
-        <button class="tgl-btn som" onclick="toggleSkills('som', this)">School of Management</button>
-    </div>
+<h1>Core Skillsets</h1>
+<div class="toggle-wrap">
+<button class="tgl-btn active sot" onclick="toggleSkills('sot', this)">School of Technology</button>
+<button class="tgl-btn som" onclick="toggleSkills('som', this)">School of Management</button>
+</div>
 </div>
 
 <div class="container">
 
-<!-- ===================== SOT SKILLS ===================== -->
+<!-- ============ SCHOOL OF TECHNOLOGY ============ -->
 <div id="sot-skills" class="skills-grid active sot">
 
 <div class="skill-card">
-<h3>💻 Development</h3>
+<h3>💻 Software Development</h3>
 <div class="tag-wrap">
-<span class="tag">HTML/CSS</span>
+<span class="tag">HTML & CSS</span>
 <span class="tag">JavaScript</span>
 <span class="tag">TypeScript</span>
 <span class="tag">React</span>
@@ -161,11 +155,11 @@
 </div>
 
 <div class="skill-card">
-<h3>🧠 AI & ML</h3>
+<h3>🧠 Artificial Intelligence</h3>
 <div class="tag-wrap">
 <span class="tag">Deep Learning</span>
-<span class="tag">LLMs</span>
-<span class="tag">GenAI</span>
+<span class="tag">Large Language Models</span>
+<span class="tag">Generative AI</span>
 <span class="tag">LangChain</span>
 <span class="tag">LangGraph</span>
 <span class="tag">Agentic AI</span>
@@ -173,25 +167,25 @@
 </div>
 
 <div class="skill-card">
-<h3>🗄️ Databases</h3>
+<h3>🗄️ Data Engineering</h3>
 <div class="tag-wrap">
 <span class="tag">MySQL</span>
 <span class="tag">PostgreSQL</span>
 <span class="tag">MongoDB</span>
 <span class="tag">Firebase</span>
 <span class="tag">Redis</span>
-<span class="tag">Vector DB</span>
+<span class="tag">Vector Databases</span>
 </div>
 </div>
 
 <div class="skill-card">
-<h3>📊 Analytics</h3>
+<h3>📊 Data Analytics</h3>
 <div class="tag-wrap">
 <span class="tag">Python (Pandas)</span>
 <span class="tag">Power BI</span>
 <span class="tag">Tableau</span>
 <span class="tag">Statistics</span>
-<span class="tag">Data Storytelling</span>
+<span class="tag">Data Visualization</span>
 </div>
 </div>
 
@@ -202,13 +196,13 @@
 <span class="tag">Java</span>
 <span class="tag">Python</span>
 <span class="tag">Competitive Programming</span>
-<span class="tag">Graphs</span>
+<span class="tag">Graph Algorithms</span>
 <span class="tag">Dynamic Programming</span>
 </div>
 </div>
 
 <div class="skill-card">
-<h3>📱 Mobile & UI/UX</h3>
+<h3>📱 Product & Design</h3>
 <div class="tag-wrap">
 <span class="tag">React Native</span>
 <span class="tag">Flutter</span>
@@ -220,44 +214,44 @@
 
 </div>
 
-<!-- ===================== SOM SKILLS ===================== -->
+<!-- ============ SCHOOL OF MANAGEMENT ============ -->
 <div id="som-skills" class="skills-grid som">
 
 <div class="skill-card">
-<h3>📢 Marketing & Branding</h3>
+<h3>📢 Marketing & Growth</h3>
 <div class="tag-wrap">
 <span class="tag">GTM Strategy</span>
 <span class="tag">Digital Marketing</span>
-<span class="tag">Brand Positioning</span>
-<span class="tag">Content Strategy</span>
+<span class="tag">Brand Strategy</span>
+<span class="tag">Content Marketing</span>
 <span class="tag">SEO</span>
 </div>
 </div>
 
 <div class="skill-card">
-<h3>🤝 Sales & Business Dev</h3>
+<h3>🤝 Sales & Business Development</h3>
 <div class="tag-wrap">
 <span class="tag">Lead Generation</span>
 <span class="tag">Client Management</span>
 <span class="tag">Negotiation</span>
 <span class="tag">B2B Sales</span>
-<span class="tag">CRM Tools</span>
+<span class="tag">CRM Systems</span>
 </div>
 </div>
 
 <div class="skill-card">
-<h3>🚀 Management & Strategy</h3>
+<h3>🚀 Product & Strategy</h3>
 <div class="tag-wrap">
 <span class="tag">Product Management</span>
 <span class="tag">MVP Planning</span>
 <span class="tag">Operations</span>
 <span class="tag">Leadership</span>
-<span class="tag">Agile</span>
+<span class="tag">Agile Methodology</span>
 </div>
 </div>
 
 <div class="skill-card">
-<h3>🔎 Research Frameworks</h3>
+<h3>🔎 Business Research</h3>
 <div class="tag-wrap">
 <span class="tag">SWOT</span>
 <span class="tag">PESTEL</span>
@@ -268,9 +262,9 @@
 </div>
 
 <div class="skill-card">
-<h3>🤖 Automation & Tools</h3>
+<h3>🤖 Automation & Productivity</h3>
 <div class="tag-wrap">
-<span class="tag">Excel (Advanced)</span>
+<span class="tag">Advanced Excel</span>
 <span class="tag">Google Sheets</span>
 <span class="tag">Shopify</span>
 <span class="tag">No-Code Tools</span>
@@ -279,12 +273,12 @@
 </div>
 
 <div class="skill-card">
-<h3>🗣️ Communication</h3>
+<h3>🗣️ Communication & Leadership</h3>
 <div class="tag-wrap">
 <span class="tag">Storytelling</span>
 <span class="tag">Copywriting</span>
 <span class="tag">Presentation Design</span>
-<span class="tag">Business Comm</span>
+<span class="tag">Business Communication</span>
 <span class="tag">Public Speaking</span>
 </div>
 </div>
