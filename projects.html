@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Projects & Startups | PW IOI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Innovation Showcase | PW IOI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #020617;
@@ -13,25 +13,48 @@
             --glass: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
             --text-muted: #94a3b8;
+            --success: #34d399;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #e5e7eb; line-height: 1.6; overflow-x: hidden; }
         
+        /* Navigation Section */
         nav {
-            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
-            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 40px; 
+            background: rgba(2, 6, 23, 0.95); 
+            backdrop-filter: blur(15px);
+            position: sticky; 
+            top: 0; 
+            z-index: 9999; 
+            border-bottom: 1px solid var(--glass-border);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
         }
         nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
         nav .logo span { color: var(--secondary); }
-        nav .links { display: flex; gap: 25px; }
-        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-        nav .links a.active { color: #fff; }
+        nav .links { display: flex; gap: 30px; }
+        nav .links a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        nav .links a:hover { color: #fff; transform: scale(1.1); text-shadow: 0 0 10px rgba(34, 211, 238, 0.8); }
+        nav .links a.active { color: var(--secondary); text-shadow: 0 0 15px rgba(34, 211, 238, 0.5); }
+        nav .links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+            background-color: var(--secondary); transition: width 0.3s ease;
+        }
+        nav .links a:hover::after, nav .links a.active::after { width: 100%; }
 
         .hero { padding: 80px 20px 40px; text-align: center; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        section { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        section { max-width: 1240px; margin: auto; padding: 40px 20px; }
         section h2 { font-size: 2.2rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; color: #fff; }
         section h2 span { width: 40px; height: 4px; background: var(--accent); border-radius: 10px; }
 
@@ -47,13 +70,18 @@
         .stack { font-size: 0.75rem; color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
         
         .card ul { list-style: none; margin-bottom: 20px; flex-grow: 1; }
-        .card ul li { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; padding-left: 18px; position: relative; }
+        .card ul li { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px; padding-left: 18px; position: relative; }
         .card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 
-        .outcome-box { font-size: 0.85rem; color: var(--secondary); font-weight: 600; padding-top: 15px; border-top: 1px solid var(--glass-border); }
-        .visit-link { margin-top: 10px; font-size: 0.85rem; color: #fff; font-weight: 700; text-decoration: underline; }
+        .metrics-row { display: flex; gap: 20px; margin-top: auto; padding-top: 15px; border-top: 1px solid var(--glass-border); }
+        .metric-item { flex: 1; }
+        .metric-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+        .metric-val { font-size: 1rem; color: var(--success); font-weight: 800; }
 
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        .badge-ext { background: rgba(99, 102, 241, 0.15); color: var(--accent); font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; display: inline-block; text-transform: uppercase; }
+        .visit-link { margin-top: 15px; font-size: 0.85rem; color: #fff; font-weight: 700; text-decoration: underline; }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } nav { padding: 20px; } }
     </style>
 </head>
 <body>
@@ -61,173 +89,184 @@
     <nav>
         <a href="index.html" class="logo">PW <span>IOI</span></a>
         <div class="links">
-            <a href="skills.html"><b>Skills</b></a>
-            <a href="sot.html"><b>SOT</b></a>
-            <a href="som.html"><b>SOM</b></a>
-            <a href="projects.html" class="active"><b>Projects</b></a>
-            
+            <a href="skills.html">SKILLS</a>
+            <a href="sot.html">SOT</a>
+            <a href="som.html">SOM</a>
+            <a href="projects.html" class="active">PROJECTS</a>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>Student Innovations</h1>
-        <p>A showcase of technical builds and entrepreneurial ventures from our cohorts.</p>
+        <h1>Project Portfolio</h1>
+        <p>A directory of core technical builds, student startups, and industry-scale solutions.</p>
     </div>
 
     <section>
-        <h2><span></span>Student Technical Projects</h2>
+        <h2><span></span>Core Student Technical Projects</h2>
         <div class="grid">
-            
             <a href="https://indiecode.vercel.app/" target="_blank" class="card">
                 <h3>IndieCode</h3>
-                <p class="stack">React · Node · Express · MongoDB · Redis</p>
+                <p class="stack">React · Node · Express · Redis</p>
                 <ul>
                     <li>Full-stack CP platform with real-time code editing.</li>
-                    <li>Secure session handling via Redis integration.</li>
-                    <li>Scalable RESTful APIs for practicing problems.</li>
+                    <li>Scalable execution engine via Redis integration.</li>
+                    <li>Secure RESTful APIs for competitive contests.</li>
                 </ul>
-                <p class="outcome-box">Outcome: Seamless, scalable coding practice.</p>
-                <span class="visit-link">Visit IndieCode →</span>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Users</p><p class="metric-val">2,000+</p></div>
+                    <div class="metric-item"><p class="metric-label">Performance</p><p class="metric-val">Real-time</p></div>
+                </div>
             </a>
 
             <a href="https://resume.pwioi.club/" target="_blank" class="card">
                 <h3>IntelliResume</h3>
-                <p class="stack">Python (FastAPI) · Next.js · TypeScript · MongoDB</p>
+                <p class="stack">Python · Next.js · TypeScript · AI</p>
                 <ul>
-                    <li>AI analyzer optimizing resumes for ATS algorithms.</li>
-                    <li>Instantly calculates compatibility scores.</li>
-                    <li>Actionable skill gap recommendations for students.</li>
+                    <li>AI analyzer optimizing resumes for ATS.</li>
+                    <li>Calculates compatibility scores instantly.</li>
+                    <li>Skill gap insights and real-time builder.</li>
                 </ul>
-                <p class="outcome-box">Outcome: Higher interview success rates.</p>
-                <span class="visit-link">Visit IntelliResume →</span>
-            </a>
-
-            <a href="https://jobsphere.online/" target="_blank" class="card">
-                <h3>JobSphere</h3>
-                <p class="stack">Next.js · TypeScript · Express · PostgreSQL · Prisma</p>
-                <ul>
-                    <li>Comprehensive job portal for employers and seekers.</li>
-                    <li>End-to-end job posting and applicant tracking.</li>
-                    <li>Real-time hiring status updates.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Streamlined recruitment visibility.</p>
-                <span class="visit-link">Visit JobSphere →</span>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Success Rate</p><p class="metric-val">+65%</p></div>
+                    <div class="metric-item"><p class="metric-label">Efficiency</p><p class="metric-val">Instant</p></div>
+                </div>
             </a>
 
             <a href="https://minli.info/" target="_blank" class="card">
                 <h3>Minli</h3>
                 <p class="stack">MongoDB · Express · React · Node</p>
                 <ul>
-                    <li>URL shortener with advanced analytics and QR codes.</li>
-                    <li>Daily click tracking (Device/Browser analytics).</li>
-                    <li>Supports password protection and expiration dates.</li>
+                    <li>URL shortener with advanced analytics.</li>
+                    <li>Device & browser-based traffic tracking.</li>
+                    <li>QR codes and link password protection.</li>
                 </ul>
-                <p class="outcome-box">Outcome: Fast, secure link sharing.</p>
-                <span class="visit-link">Visit Minli →</span>
-            </a>
-
-            <a href="https://app.pwioi.club/" target="_blank" class="card">
-                <h3>Academic Management System</h3>
-                <p class="stack">Node · Express · TypeScript · PostgreSQL · AWS</p>
-                <ul>
-                    <li>Internal OS managing campus life and student data.</li>
-                    <li>Type-safe APIs handling 1,000+ active users.</li>
-                    <li>Automated reporting via Cron-jobs and AWS S3.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Enhanced campus operations.</p>
-                <span class="visit-link">Visit Platform →</span>
-            </a>
-
-            <div class="card">
-                <h3>CryptoSentinel</h3>
-                <p class="stack">React.js · Tailwind CSS · Express.js · Ollama</p>
-                <ul>
-                    <li>AI dashboard for real-time crypto tracking.</li>
-                    <li>Sentiment analysis for 50+ coins with 85% accuracy.</li>
-                    <li>Reduces market research time by 70%.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Insight-driven crypto trading.</p>
-            </div>
-
-            <a href="https://www.pwleapx.com/" target="_blank" class="card">
-                <h3>PWLeapX</h3>
-                <p class="stack">React · TypeScript · Tailwind · Framer Motion</p>
-                <ul>
-                    <li>Tech-execution hub connecting startups with talent.</li>
-                    <li>Supported technical execution for 20+ startups.</li>
-                    <li>Community management for 500+ founders.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Empowering startup growth.</p>
-                <span class="visit-link">Visit Website →</span>
-            </a>
-
-            <a href="https://structify.vercel.app/" target="_blank" class="card">
-                <h3>Data Structure Visualizer</h3>
-                <p class="stack">React.js · GSAP · Tailwind CSS</p>
-                <ul>
-                    <li>Interactive animations for 8+ data structures.</li>
-                    <li>Visualizes logic flow for conceptual clarity.</li>
-                    <li>Modular architecture for educational expansion.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Improved student conceptual clarity.</p>
-                <span class="visit-link">Visit Structify →</span>
-            </a>
-
-            <a href="https://github.com/RohitMakaniProfile/youtube-study-assistant" target="_blank" class="card">
-                <h3>EduTube Coach</h3>
-                <p class="stack">FastAPI · Groq · LangChain · Whisper · SQLite</p>
-                <ul>
-                    <li>Transforms video lectures into revision flashcards.</li>
-                    <li>Automated ASR to spaced revision pipeline.</li>
-                    <li>Multilingual prompting with contextual grounding.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Efficient lecture retention.</p>
-                <span class="visit-link">View Repository →</span>
-            </a>
-
-            <a href="https://github.com/RohitMakaniProfile/Multi-Modal-RAG-System" target="_blank" class="card">
-                <h3>Multimodal RAG</h3>
-                <p class="stack">CLIP · FAISS · FastAPI · Python</p>
-                <ul>
-                    <li>Retrieval system for both text and image databases.</li>
-                    <li>High-speed vector retrieval using FAISS.</li>
-                    <li>Seamless multilingual queries via CLIP embeddings.</li>
-                </ul>
-                <p class="outcome-box">Outcome: Context-aware multimodal search.</p>
-                <span class="visit-link">View Repository →</span>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Uptime</p><p class="metric-val">99.9%</p></div>
+                    <div class="metric-item"><p class="metric-label">Analytics</p><p class="metric-val">Live</p></div>
+                </div>
             </a>
         </div>
     </section>
 
     <section>
-        <h2><span></span>Student Startups</h2>
+        <h2><span></span>External Industry Projects</h2>
         <div class="grid">
+            
+            <div class="card">
+                <span class="badge-ext">EdTech</span>
+                <h3>Student Profile (ERP & LMS)</h3>
+                <p class="stack">Centralized Academic Hub</p>
+                <ul>
+                    <li>Centralized platform for students, teachers, and admins.</li>
+                    <li>Dashboards for attendance & academic tracking.</li>
+                    <li>LMS assessment and content management system.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Users</p><p class="metric-val">1,500+</p></div>
+                    <div class="metric-item"><p class="metric-label">Productivity</p><p class="metric-val">40% Faster</p></div>
+                </div>
+            </div>
 
             <div class="card">
+                <span class="badge-ext">AI & Automation</span>
+                <h3>Koncite (AI Construction Audit)</h3>
+                <p class="stack">Voice-based Multilingual Platform</p>
+                <ul>
+                    <li>Converts voice inputs into structured audit reports.</li>
+                    <li>Multilingual input support for construction site audits.</li>
+                    <li>Automated audit report generation via AI chatbot.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Time Saved</p><p class="metric-val">60% Reduction</p></div>
+                    <div class="metric-item"><p class="metric-label">Reach</p><p class="metric-val">500+ Users</p></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge-ext">HealthTech</span>
+                <h3>YourLabs (Doctor App)</h3>
+                <p class="stack">Appointment & Management App</p>
+                <ul>
+                    <li>End-to-end doctor discovery and booking system.</li>
+                    <li>Patient records management and payment integration.</li>
+                    <li>Admin analytics for laboratory efficiency tracking.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Efficiency</p><p class="metric-val">40% Faster</p></div>
+                    <div class="metric-item"><p class="metric-label">Automation</p><p class="metric-val">50% High</p></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge-ext">FinTech</span>
+                <h3>Fintech AI App</h3>
+                <p class="stack">Loan Discovery & AI Monitoring</p>
+                <ul>
+                    <li>Simplifies loan application and monitoring processes.</li>
+                    <li>AI-powered recommendations for loan refinancing.</li>
+                    <li>Application tracking with real-time status updates.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Decision Speed</p><p class="metric-val">55% Faster</p></div>
+                    <div class="metric-item"><p class="metric-label">Friction</p><p class="metric-val">45% Lower</p></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge-ext">Business Solutions</span>
+                <h3>Digital Branding Execution</h3>
+                <p class="stack">Performance & Content Strategy</p>
+                <ul>
+                    <li>Builds awareness and early revenue via social media.</li>
+                    <li>Strategic performance marketing and audience targeting.</li>
+                    <li>Scalable content execution for brand awareness.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Revenue Growth</p><p class="metric-val">4X Increase</p></div>
+                    <div class="metric-item"><p class="metric-label">Audience</p><p class="metric-val">3.4X Growth</p></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="badge-ext">AI & Automation</span>
+                <h3>Sales Auditing Platform</h3>
+                <p class="stack">CRM & API Integrated Audit</p>
+                <ul>
+                    <li>Automated sales analysis integrated with CRM systems.</li>
+                    <li>AI-enabled API integrations for real-time audit analysis.</li>
+                    <li>Automated reporting pipelines for sales managers.</li>
+                </ul>
+                <div class="metrics-row">
+                    <div class="metric-item"><p class="metric-label">Audit Speed</p><p class="metric-val">50% Faster</p></div>
+                    <div class="metric-item"><p class="metric-label">Integrations</p><p class="metric-val">CRM/API</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><span></span>Active Student Startups</h2>
+        <div class="grid">
+            <div class="card">
                 <h3>Aasta</h3>
-                <p class="stack">Food-Tech · Sustainability · Cloud Kitchen</p>
+                <p class="stack">Food-Tech · Sustainability</p>
                 <ul>
                     <li>Redistributes surplus meals to reduce food waste.</li>
                     <li>Helps businesses recover value from unsold items.</li>
                     <li>Sustainable model providing affordable high-quality meals.</li>
                 </ul>
-                <p class="outcome-box">Outcome: Sustainable food model.</p>
             </div>
-
             <div class="card">
                 <h3>Celestial</h3>
-                <p class="stack">E-commerce · Wellness · Artisan Focus</p>
+                <p class="stack">E-commerce · Wellness</p>
                 <ul>
                     <li>Wellness brand for lab-certified gemstones.</li>
-                    <li>Zodiac-based spiritual jewellery and intentions.</li>
+                    <li>Tailored products based on zodiac energies.</li>
                     <li>Authenticity-first approach with certified stones.</li>
                 </ul>
-                <p class="outcome-box">Outcome: Wellness-based commerce.</p>
             </div>
-
         </div>
     </section>
 
 </body>
-
 </html>
