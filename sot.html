@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,55 +16,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; }
         
-        /* Navigation Section */
         nav {
-            padding: 20px 40px; 
-            background: rgba(2, 6, 23, 0.95); 
-            backdrop-filter: blur(15px);
-            position: sticky; 
-            top: 0; 
-            z-index: 9999; 
-            border-bottom: 1px solid var(--glass-border);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
+            padding: 20px 40px; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
         }
-
         nav .logo { color: white; text-decoration: none; font-weight: 800; font-size: 1.2rem; }
         nav .logo span { color: var(--accent); }
-
         nav .links { display: flex; gap: 30px; }
+        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; transition: 0.3s; position: relative; }
+        nav .links a:hover { color: #fff; transform: scale(1.1); }
 
-        nav .links a { 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            letter-spacing: 1px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        nav .links a:hover { 
-            color: #fff; 
-            transform: scale(1.1);
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-        }
-
-        nav .links a.active { 
-            color: var(--accent); 
-            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-        }
-
-        nav .links a::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
-            background-color: var(--accent); transition: width 0.3s ease;
-        }
-        nav .links a:hover::after, nav .links a.active::after { width: 100%; }
-
-        /* Hero & Container */
         .hero { padding: 60px 20px; text-align: center; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
         .hero p { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 10px; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
@@ -90,26 +53,32 @@
         .data-label { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; font-weight: 800; }
         .data-val { font-size: 0.8rem; font-family: 'Courier New', monospace; color: #e2e8f0; }
 
+        .right-col { display: flex; flex-direction: column; gap: 15px; }
+
+        .experience-box { background: rgba(56, 189, 248, 0.05); padding: 20px 25px; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.1); }
+        .experience-box.working { background: rgba(34, 197, 94, 0.05); border-color: rgba(34, 197, 94, 0.2); }
+        .experience-box h4 { color: var(--accent); text-transform: uppercase; font-size: 0.7rem; margin-bottom: 8px; letter-spacing: 1px; }
+        .experience-box.working h4 { color: #4ade80; }
+        .exp-text { font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.4; }
+        
+        .status-pill { font-size: 0.6rem; background: rgba(34, 197, 94, 0.15); color: #4ade80; padding: 2px 8px; border-radius: 4px; margin-left: 10px; border: 1px solid rgba(34, 197, 94, 0.2); text-transform: uppercase; vertical-align: middle; }
+
         .achievements-box { background: rgba(167, 139, 250, 0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.1); }
         .achievements-box h4 { color: #a78bfa; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 15px; letter-spacing: 1px; }
         .achievements-box ul { list-style: none; }
         .achievements-box li { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 12px; padding-left: 20px; position: relative; line-height: 1.4; }
         .achievements-box li::before { content: "•"; position: absolute; left: 0; color: #a78bfa; font-weight: bold; }
 
-        .btn-main {
-            display: block; width: 100%; text-align: center; background: #fff; color: #020617;
-            padding: 12px; border-radius: 12px; font-weight: 800; text-decoration: none; transition: 0.3s;
-        }
+        .btn-main { display: block; width: 100%; text-align: center; background: #fff; color: #020617; padding: 12px; border-radius: 12px; font-weight: 800; text-decoration: none; transition: 0.3s; }
         .btn-main:hover { background: var(--accent); transform: scale(1.02); }
 
-        @media (max-width: 900px) { .profile-card { grid-template-columns: 1fr; } nav { padding: 20px; } }
-        
+        @media (max-width: 900px) { .profile-card { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">PW <span>Institue of Innovation</span></a>
+        <a href="index.html" class="logo">PW <span>Institute of Innovation</span></a>
         <div class="links">
             <a href="skills.html">SKILLS</a>
             <a href="sot.html"><b>School of Technology</b></a>
@@ -128,7 +97,7 @@
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Shoyeb Ansari</h2>
-                <span class="tagline">JEE: 95 percentile | Backend Intern @ FlexyPe</span>
+                <span class="tagline">JEE: 95 percentile | Backend Specialist</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/Shoyeb45" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Shoyeb45</span></a>
                     <a href="https://github.com/Shoyeb45" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Shoyeb45</span></a>
@@ -136,13 +105,20 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1HRtg5pC7xkjxMwTJR30IiGbJbaXL0w6p/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Meta Hacker Cup Rank 2998 (R1), 2700 (R2) – Top 5% Globally.</li>
-                    <li>2nd Runner-Up Rajasthan Police Hackathon (1665 teams).</li>
-                    <li>Specialized in robust backend architecture and systems.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <div class="exp-text">Backend Intern @ FlexyPe <span class="status-pill">Active</span></div><br>
+                     <span class="exp-text">Backend Intern @ PW LeapX</span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Meta Hacker Cup Rank 2998 (R1), 2700 (R2) – Top 5% Globally.</li>
+                        <li>2nd Runner-Up Rajasthan Police Hackathon (1665 teams).</li>
+                        <li>Specialized in robust backend architecture and systems.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -157,20 +133,26 @@
                 </div>
                 <a href="https://drive.google.com/drive/folders/1nkb8YyN998bXIfLaS-ZVA1M-EF2rmjth?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Codeforces Expert (1647) | CodeChef 3-Star.</li>
-                    <li>ICPC Regional Ranks: 1489 (2024), 1041 (2025).</li>
-                    <li>Hackathon Winner – Kisaan Mitra | Vishwas Diwas 2nd Runner-up.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box">
+                    <h4>Professional Track</h4>
+                    <span class="exp-text">Full Stack Developer & CP Expert</span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Codeforces Expert (1647) | CodeChef 3-Star.</li>
+                        <li>ICPC Regional Ranks: 1489 (2024), 1041 (2025).</li>
+                        <li>Hackathon Winner – Kisaan Mitra | Vishwas Diwas 2nd Runner-up.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Rohit Singh</h2>
-                <span class="tagline">JEE: 91 percentile | DataScience Intern @ Allo Health</span>
+                <span class="tagline">JEE: 91 percentile | CP Expert</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/defender45" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">defender45</span></a>
                     <a href="https://github.com/Itsrohit819" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Itsrohit819</span></a>
@@ -178,20 +160,26 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1udVk3roAK-Ely0QR87By59NMAUUehMtw/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Meta Hacker Cup 2025 – Ranks: 622 (R1), 153 (R2), 186 (R3).</li>
-                    <li>1st Prize – Innovate & Inspire CP Competition.</li>
-                    <li>Built production-level web & mobile applications.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Data Science Intern @ Allo Health</span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Meta Hacker Cup 2025 – Ranks: 622 (R1), 153 (R2), 186 (R3).</li>
+                        <li>1st Prize – Innovate & Inspire CP Competition.</li>
+                        <li>Built production-level web & mobile applications.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Aditya Gupta</h2>
-                <span class="tagline">JEE: 97.2% | Advanced Rank 25590 | ML Intern @ PW LeapX</span>
+                <span class="tagline">JEE: 97.2% | Advanced Rank 25590</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/Chill-guy" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Chill-guy</span></a>
                     <a href="https://github.com/Adityag0243" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Adityag0243</span></a>
@@ -199,20 +187,26 @@
                 </div>
                 <a href="https://drive.google.com/drive/folders/1CrM5UNFaRxvPpXgrykcwuJWvLtVSvb1W" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>PW Innovation Hackathon Winner – 1st Rank (50+ teams).</li>
-                    <li>NTSE Stage-1 Qualified | JNV Alumni.</li>
-                    <li>Vidyarthi Vigyan Manthan – State Level Participant.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">ML Intern @ PW LeapX <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>PW Innovation Hackathon Winner – 1st Rank (50+ teams).</li>
+                        <li>NTSE Stage-1 Qualified | JNV Alumni.</li>
+                        <li>Contributing to high-impact ML models at LeapX.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Krishna Kishore</h2>
-                <span class="tagline">JEE: 98.60% | Advanced Rank 25613 </span>
+                <span class="tagline">JEE: 98.60% | Advanced Rank 25613</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/Dragon_Krissash" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Dragon_Krissash</span></a>
                     <a href="https://github.com/DragonKrissash" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">DragonKrissash</span></a>
@@ -220,20 +214,26 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1z8uC5huCwMHiA5UD3PXHr_BvINJdVIG7/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Codeforces Expert | ICPC Regional Competitor.</li>
-                    <li>LinkedIn: linkedin.com/in/krishnakishore1119</li>
-                    <li>Focus on high-quality code contributions and CP.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box">
+                    <h4>Professional Track</h4>
+                    <span class="exp-text">Elite Coder & Pupil At CF</span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Codeforces Pupil | ICPC Regional Competitor.</li>
+                        <li>LinkedIn: linkedin.com/in/krishnakishore1119</li>
+                        <li>Focus on high-quality code contributions and CP.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Rohit Sah</h2>
-                <span class="tagline">JEE: 89% | FullStack Intern @ PhysicsWallah</span>
+                <span class="tagline">JEE: 89% | MERN Developer</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/NadeX" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">NadeX</span></a>
                     <a href="https://github.com/rohitsah12" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">rohitsah12</span></a>
@@ -241,20 +241,26 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1T1daje4h6ZgS9DA2QFrSlOX12KP7-gMI/view" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Coder Army Hackathon – 8th Rank (100+ professional teams).</li>
-                    <li>FullStack Intern building tools at PhysicsWallah.</li>
-                    <li>Competitive programming expert and web developer.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Full Stack Intern @ PhysicsWallah <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Coder Army Hackathon – 8th Rank (100+ professional teams).</li>
+                        <li>FullStack Intern building tools at PhysicsWallah.</li>
+                        <li>Competitive programming expert and web developer.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Allan Joseph</h2>
-                <span class="tagline">JEE: 91% | Competitive Programming Expert</span>
+                <span class="tagline">JEE: 91% | MERN Developer</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/ZenStein30" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ZenStein30</span></a>
                     <a href="https://github.com/allanjoseph01" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">allanjoseph01</span></a>
@@ -262,20 +268,26 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1DzJrip8kYz3zPdVZD9qusKzDWH6pkczO/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Multi-platform CP specialist (Codeforces, LeetCode, GitHub).</li>
-                    <li>Strong problem-solving and algorithm development skills.</li>
-                    <li>Active developer with consistent coding frequency.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Full Stack Developer Intern @ PW LeapX <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Multi-platform CP specialist (Codeforces, LeetCode, GitHub).</li>
+                        <li>Strong problem-solving and algorithm development skills.</li>
+                        <li>Active developer with consistent coding frequency.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Aadhar Goel</h2>
-                <span class="tagline">Codeforces Specialist (1409) | Mastered 1000+ DSA | Backend Intern @ PW LeapX</span>
+                <span class="tagline">Codeforces Specialist | 1000+ DSA</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/goel_aadhaar" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">goel_aadhaar</span></a>
                     <a href="https://github.com/goel-aadhaar" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">goel-aadhaar</span></a>
@@ -283,20 +295,26 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1rhHHmBVAFpvguNV8caauYHa-k-6XfkZY/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>PWHackathon 1st Prize Winner.</li>
-                    <li>Solved 1000+ DSA problems with multi-platform mastery.</li>
-                    <li>High-ranking specialist on Codeforces (Max: 1409).</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Backend Intern @ PW LeapX <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>PWHackathon 1st Prize Winner.</li>
+                        <li>Solved 1000+ DSA problems with multi-platform mastery.</li>
+                        <li>High-ranking specialist on Codeforces (Max: 1409).</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Rohit Makani</h2>
-                <span class="tagline">JEE: 95% | ML Intern @ Ikshan AI</span>
+                <span class="tagline">JEE: 95% | ML Expert</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/ROHITji" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ROHITji</span></a>
                     <a href="https://github.com/RohitMakaniProfile" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">RohitMakaniProfile</span></a>
@@ -304,20 +322,27 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1wVWP5C8foBkLuyZDD4hwI_HLCStMtEwo/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>2nd Runner-Up CMRIT Power BI Data Analysis Hackathon.</li>
-                    <li>Top 10 Rank in PW Internal Employees Hackathon.</li>
-                    <li>Machine Learning expertise and industry data analysis experience.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <div class="exp-text">ML Intern @ Ikshan AI <span class="status-pill">Active</span></div><br>
+                    <div class="exp-text">ML Intern @ PW LeapX </div>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>2nd Runner-Up CMRIT Power BI Data Analysis Hackathon.</li>
+                        <li>Top 10 Rank in PW Internal Employees Hackathon.</li>
+                        <li>Machine Learning expertise and industry data analysis experience.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="profile-card">
             <div class="profile-info">
                 <h2>Mitesh Agrawal</h2>
-                <span class="tagline">JEE: 96% | FullStack Intern @ Allo Health</span>
+                <span class="tagline">JEE: 96% | FullStack Specialist</span>
                 <div class="data-links">
                     <a href="https://codeforces.com/profile/Mitesh_Agrawal" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">Mitesh_Agrawal</span></a>
                     <a href="https://github.com/Mitesh766" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">Mitesh766</span></a>
@@ -325,13 +350,75 @@
                 </div>
                 <a href="https://drive.google.com/file/d/1arS3sZD3LcjSeJ6DlyiB9pyzsTWAjG5O/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Delivered production-ready code for Allo Health.</li>
-                    <li>Expert-level problem solver on LeetCode.</li>
-                    <li>Strong FullStack foundation with industry experience.</li>
-                </ul>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Full Stack Developer Intern @ Allo Health </span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Delivered production-ready code for Allo Health.</li>
+                        <li>Expert-level problem solver on LeetCode.</li>
+                        <li>Strong FullStack foundation with industry experience.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="profile-card">
+            <div class="profile-info">
+                <h2>Sofikul sk</h2>
+                <span class="tagline">WBJEE Rank: 592 | Backend Specialist</span>
+                <div class="data-links">
+                    <a href="https://codeforces.com/profile/sofikulsk_02" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">sofikulsk_02</span></a>
+                    <a href="https://github.com/sofikulsk02" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">sofikulsk02</span></a>
+                    <a href="https://leetcode.com/u/sofikul_sk_02" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">sofikul_sk_02</span></a>
+                </div>
+                <a href="#" target="_blank" class="btn-main">View Full Portfolio</a>
+            </div>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Backend Intern @ PW LeapX <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Engineering scalable and robust backend systems at PW.</li>
+                        <li>Collaborated with Jadavpur University on technical initiatives.</li>
+                        <li>Proven track record of building production-ready apps.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-info">
+                <h2>Ankit Raj</h2>
+                <span class="tagline">Full Stack Developer | Hackathon Runner-up</span>
+                <div class="data-links">
+                    <a href="https://codeforces.com/profile/ankitraj061" target="_blank" class="data-row"><span class="data-label">Codeforces</span><span class="data-val">ankitraj061</span></a>
+                    <a href="https://github.com/ankitraj061" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">ankitraj061</span></a>
+                    <a href="https://leetcode.com/u/ankitraj061/" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">ankitraj061</span></a>
+                </div>
+                <a href="https://drive.google.com/file/d/1cubFtX8TaO_dmUv08mNki0TiPBakqs3p/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
+            </div>
+            <div class="right-col">
+                <div class="experience-box working">
+                    <h4>Current Experience</h4>
+                    <span class="exp-text">Full Stack Developer Intern @ PW LeapX <span class="status-pill">Active</span></span>
+                </div>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>1+ year experience building end-to-end web applications.</li>
+                        <li>Runner-up in PW IOI Data Science Hackathon (50+ teams).</li>
+                        <li>Specialized in Next.js, Node.js, and Docker workflows.</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="profile-card">
@@ -339,92 +426,28 @@
                 <h2>Harshit Raj</h2>
                 <span class="tagline">IIT Madras (9.2 CGPA)</span>
                 <div class="data-links">
-                    <a href="https://harshitspace.in" target="_blank" class="data-row">
-                        <span class="data-label">Portfolio</span>
-                        <span class="data-val">harshitspace.in</span>
-                    </a>
-                    <a href="https://github.com/harshitspace" target="_blank" class="data-row">
-                        <span class="data-label">GitHub</span>
-                        <span class="data-val">harshitspace</span>
-                    </a>
-                    <a href="https://leetcode.com/u/harshitspace" target="_blank" class="data-row">
-                        <span class="data-label">LeetCode</span>
-                        <span class="data-val">harshitspace</span>
-                    </a>
+                    <a href="https://harshitspace.in" target="_blank" class="data-row"><span class="data-label">Portfolio</span><span class="data-val">harshitspace.in</span></a>
+                    <a href="https://github.com/harshitspace" target="_blank" class="data-row"><span class="data-label">GitHub</span><span class="data-val">harshitspace</span></a>
+                    <a href="https://leetcode.com/u/harshitspace" target="_blank" class="data-row"><span class="data-label">LeetCode</span><span class="data-val">harshitspace</span></a>
                 </div>
                 <a href="https://harshitspace.in" target="_blank" class="btn-main">View Full Portfolio</a>
             </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li>Architected <b>NexusAPI</b> with FastAPI and Redis for high-performance task queuing.</li>
-                    <li>Developed <b>DevTinder</b>, a MERN networking platform with real-time WebSockets on AWS.</li>
-                    <li>Built <b>NetflixGPT</b>, an AI-driven movie recommender utilizing the Gemini API.</li>
-                    <li>Maintains a consistent <b>73+ day GitHub commit streak</b>.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="profile-card">
-            <div class="profile-info">
-                <h2>Sofikul sk</h2>
-                <span class="tagline">WBJEE Rank: 592 | Backend Intern @ Physics Wallah</span>
-                <div class="data-links">
-                    <a href="https://codeforces.com/profile/sofikulsk_02" target="_blank" class="data-row">
-                        <span class="data-label">Codeforces</span>
-                        <span class="data-val">sofikulsk_02</span>
-                    </a>
-                    <a href="https://github.com/sofikulsk02" target="_blank" class="data-row">
-                        <span class="data-label">GitHub</span>
-                        <span class="data-val">sofikulsk02</span>
-                    </a>
-                    <a href="https://leetcode.com/u/sofikul_sk_02" target="_blank" class="data-row">
-                        <span class="data-label">LeetCode</span>
-                        <span class="data-val">sofikul_sk_02</span>
-                    </a>
+            <div class="right-col">
+                <div class="experience-box">
+                    <h4>Professional Track</h4>
+                    <span class="exp-text">Full-Stack & GenAI Engineer</span>
                 </div>
-                <a href="drive_link" target="_blank" class="btn-main">View Full Portfolio</a>
-            </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li><b>Backend Intern @ Physics Wallah</b>, engineering scalable and robust system architectures.</li>
-                    <li>Collaborated with <b>Jadavpur University</b> and <b>University of Calcutta</b> on technical initiatives.</li>
-                    <li>Built and successfully deployed multiple <b>production-ready full-stack applications</b>.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="profile-card working">
-            <div class="profile-info">
-                <h2>Ankit Raj</h2>
-                <span class="tagline">Full Stack Intern @ Physics Wallah | Runner-up Data Science Hackathon</span>
-                <div class="data-links">
-                    <a href="https://codeforces.com/profile/ankitraj061" target="_blank" class="data-row">
-                        <span class="data-label">Codeforces</span>
-                        <span class="data-val">ankitraj061 (1045)</span>
-                    </a>
-                    <a href="https://github.com/ankitraj061" target="_blank" class="data-row">
-                        <span class="data-label">GitHub</span>
-                        <span class="data-val">ankitraj061</span>
-                    </a>
-                    <a href="https://leetcode.com/u/ankitraj061/" target="_blank" class="data-row">
-                        <span class="data-label">LeetCode</span>
-                        <span class="data-val">ankitraj061</span>
-                    </a>
+                <div class="achievements-box">
+                    <h4>🏆 Key Achievements</h4>
+                    <ul>
+                        <li>Architected NexusAPI with FastAPI and Redis.</li>
+                        <li>Developed DevTinder (MERN Stack networking platform).</li>
+                        <li>Built NetflixGPT utilizing Gemini API for AI recommendations.</li>
+                    </ul>
                 </div>
-                <a href="https://drive.google.com/file/d/1cubFtX8TaO_dmUv08mNki0TiPBakqs3p/view?usp=sharing" target="_blank" class="btn-main">View Full Portfolio</a>
-            </div>
-            <div class="achievements-box">
-                <h4>🏆 Key Achievements</h4>
-                <ul>
-                    <li><b>Full Stack Intern @ Physics Wallah</b> (1+ Year), building production-ready web and deployment workflows.</li>
-                    <li><b>Runner-up PW IOI Data Science Hackathon</b> (50+ teams) for advanced healthcare data reporting.</li>
-                    <li>Technical proficiency in <b>Next.js, Docker, and PostgreSQL</b> for scalable architecture.</li>
-                </ul>
             </div>
         </div>
 
     </div>
 </body>
 </html>
-
-
