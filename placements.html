@@ -1,321 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placements &amp; Outcomes | PW Institute of Innovation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PW Institute of Innovation School of Technology placement and internship outcomes for SOT23 and SOT24.">
+  <title>Placements & Outcomes | PW Institute of Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b16;
+      --surface: #0e1729;
+      --surface-2: #121e34;
+      --border: rgba(171, 198, 239, .14);
+      --text: #f5f8ff;
+      --muted: #9baac0;
+      --cyan: #39bffa;
+      --mint: #54dfb5;
+      --gold: #ffd37f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--text); font-family: Inter, system-ui, -apple-system, sans-serif; line-height: 1.55;
+      background: radial-gradient(ellipse 800px 480px at 80% 5%, rgba(34, 107, 180, .16), transparent 75%), var(--bg); }
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { max-width: 1190px; margin: 0 auto; padding: 0 28px; }
 
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-card-hover: #1a1a26;
-            --border-subtle: rgba(255,255,255,0.06);
-            --text-primary: #f0f0f5;
-            --text-secondary: #8a8a9a;
-            --text-muted: #5a5a6a;
-            --accent-start: #3b82f6;
-            --accent-end: #06d6a0;
-            --accent-warm: #f59e0b;
-            --accent-rose: #f43f5e;
-            --gradient-brand: linear-gradient(135deg, #3b82f6, #06d6a0);
-            --gradient-warm: linear-gradient(135deg, #f59e0b, #f43f5e);
-        }
+    /* Same PW IOI navigation family as the existing site */
+    .site-nav { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border);
+      background: rgba(7, 11, 22, .94); backdrop-filter: blur(16px); }
+    .nav-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { text-decoration: none; font-weight: 900; font-size: 18px; letter-spacing: -.6px; white-space: nowrap; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 800;
+      letter-spacing: .8px; text-transform: uppercase; white-space: nowrap; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* Hero */
+    .hero { padding: 84px 0 64px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .hero-layout { display: grid; grid-template-columns: 1.28fr .72fr; align-items: center; gap: 70px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--mint); font-size: 11px;
+      font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--mint);
+      box-shadow: 0 0 0 5px rgba(84, 223, 181, .10); }
+    .hero h1 { margin: 24px 0 18px; font-size: clamp(38px, 5vw, 65px); font-weight: 900;
+      line-height: 1.08; letter-spacing: -2.8px; }
+    .gradient-text { color: var(--cyan); background: linear-gradient(110deg, #53caff 10%, #61e7c1 90%);
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-copy { max-width: 565px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+    .hero-tags { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-tags span { font-size: 11px; color: #c4d4ea; padding: 8px 12px; border-radius: 50px;
+      border: 1px solid var(--border); background: rgba(255,255,255,.025); }
+    .hero-showcase { border: 1px solid rgba(72, 194, 236, .30); border-radius: 24px; padding: 26px 27px;
+      background: linear-gradient(145deg, rgba(39, 100, 159, .24), rgba(15, 31, 52, .65));
+      box-shadow: 0 26px 70px rgba(0,0,0,.22); }
+    .showcase-kicker { color: #a2bdd5; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+    .showcase-number { font-size: clamp(40px, 4.5vw, 62px); letter-spacing: -3px; font-weight: 900;
+      line-height: 1; margin: 20px 0 8px; color: var(--mint); }
+    .showcase-caption { color: var(--text); font-size: 13px; font-weight: 700; }
+    .showcase-rule { height: 1px; background: rgba(255,255,255,.14); margin: 25px 0 21px; }
+    .showcase-bottom { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .showcase-bottom strong { font-size: 21px; color: var(--cyan); }
+    .showcase-bottom p { font-size: 11px; margin: 0; color: #acbfd5; }
 
-        /* NAV */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 1rem 3rem;
-            background: rgba(10,10,15,0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
-        .logo span { color: #fff; }
-        .logo em {
-            font-style: normal;
-            background: var(--gradient-brand);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        nav ul { list-style: none; display: flex; gap: 2.2rem; }
-        nav ul li a {
-            color: var(--text-secondary); text-decoration: none;
-            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-            transition: color 0.2s;
-        }
-        nav ul li a:hover, nav ul li a.active { color: var(--text-primary); }
-        nav ul li a.active {
-            background: var(--gradient-brand);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+    /* Cohort navigation */
+    .batch-zone { padding: 46px 0 60px; }
+    .batch-selector { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .selector-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 800;
+      color: var(--muted); margin-right: 12px; }
+    .batch-btn { border: 1px solid var(--border); background: #111a2a; color: #c9d3e2;
+      border-radius: 12px; min-width: 130px; padding: 13px 25px; font-size: 13px; font-weight: 800;
+      cursor: pointer; transition: .2s; }
+    .batch-btn:hover { border-color: var(--cyan); }
+    .batch-btn[aria-selected="true"] { background: linear-gradient(120deg, #38bdf8, #53dcbc); color: #061322;
+      border-color: transparent; box-shadow: 0 7px 30px rgba(56,189,248,.14); }
+    [hidden] { display: none !important; }
+    .panel-top { margin-bottom: 30px; }
+    .section-kicker { color: var(--mint); font-size: 11px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+    .panel-top h2 { font-size: clamp(28px, 3.2vw, 40px); letter-spacing: -1.3px; margin: 10px 0 8px; }
+    .panel-top p { color: var(--muted); font-size: 14px; margin: 0; }
+    .heading-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; margin: 52px 0 19px; }
+    .heading-row h3 { font-size: 23px; letter-spacing: -.7px; margin: 7px 0 0; }
+    .subtext { color: var(--muted); font-size: 12px; margin: 0; }
 
-        /* HERO */
-        .hero {
-            padding: 10rem 3rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900; letter-spacing: -0.03em;
-            background: var(--gradient-brand);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 0.75rem;
-        }
-        .hero p {
-            color: var(--text-secondary); font-size: 1.1rem; max-width: 550px; margin: 0 auto;
-        }
+    /* Metrics */
+    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+    .stat { min-height: 164px; padding: 25px 24px 22px; border-radius: 19px; position: relative; overflow: hidden;
+      border: 1px solid var(--border); background: linear-gradient(150deg, #111d31, #0d1424); transition: .25s; }
+    .stat:hover { transform: translateY(-3px); border-color: rgba(57,191,250,.43); }
+    .stat::after { content: ""; position: absolute; right: -40px; top: -40px; width: 105px; height: 105px;
+      border-radius: 50%; background: rgba(57,191,250,.05); }
+    .stat-label { color: #b4c3d7; font-size: 12px; font-weight: 600; }
+    .stat-number { margin-top: 16px; color: var(--cyan); font-size: clamp(25px, 3vw, 38px);
+      letter-spacing: -1.5px; font-weight: 900; line-height: 1.05; }
+    .stat.featured { border-color: rgba(84,223,181,.38); background: linear-gradient(135deg, #123329, #102233 88%); }
+    .stat.featured .stat-number { color: var(--mint); }
+    .stat .context { color: #93a8c1; display: block; font-size: 10px; margin-top: 10px; }
 
-        /* SECTIONS */
-        section { padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }
-        .section-label {
-            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
-            text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;
-        }
-        .section-title {
-            font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em;
-            margin-bottom: 2.5rem;
-        }
+    /* Cohort analysis */
+    .analysis-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    .data-panel, .compare-panel { background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 26px; }
+    .data-panel h4, .compare-panel h4 { font-size: 15px; margin: 0 0 18px; }
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th, .data-table td { padding: 12px 0; border-bottom: 1px solid rgba(171,198,239,.1); font-size: 12px; }
+    .data-table tr:last-child th, .data-table tr:last-child td { border-bottom: none; }
+    .data-table th { font-weight: 500; color: #a7b5ca; text-align: left; }
+    .data-table td { font-weight: 800; color: #e6f4ff; text-align: right; padding-left: 15px; }
+    .benchmark { margin: 22px 0 26px; }
+    .benchmark-head { display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      color: #b3c3d8; font-size: 11px; font-weight: 600; margin-bottom: 9px; }
+    .benchmark-head strong { color: #e6f6ff; font-size: 12px; }
+    .benchmark-track { height: 9px; border-radius: 30px; background: #202c3e; overflow: hidden; }
+    .benchmark-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, #278dd3, #4be0b9); }
+    .benchmark-note { color: var(--muted); font-size: 11px; line-height: 1.8; border-top: 1px solid var(--border);
+      padding-top: 19px; margin-top: 8px; }
 
-        /* HIGHLIGHT STATS */
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem; margin-top: 3rem;
-        }
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px; padding: 1.5rem;
-            text-align: center;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .stat-card:hover {
-            border-color: rgba(59,130,246,0.25);
-            transform: translateY(-2px);
-        }
-        .stat-value {
-            font-size: 2rem; font-weight: 900; letter-spacing: -0.03em;
-            background: var(--gradient-brand);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .stat-card.warm .stat-value {
-            background: var(--gradient-warm);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .stat-label {
-            font-size: 0.78rem; color: var(--text-secondary);
-            margin-top: 0.3rem; font-weight: 500;
-        }
+    /* Offers and featured students */
+    .offer-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
+    .offer-card { background: linear-gradient(160deg, #142039, #0e1729); border: 1px solid var(--border);
+      border-radius: 18px; padding: 22px; min-height: 190px; display: flex; flex-direction: column; }
+    .offer-card .type { text-transform: uppercase; letter-spacing: 1.3px; color: var(--mint);
+      font-size: 9px; font-weight: 800; }
+    .offer-card h4 { font-size: 16px; letter-spacing: -.35px; margin: 14px 0 5px; }
+    .offer-card .role { color: var(--muted); font-size: 11px; line-height: 1.65; }
+    .offer-card .package { color: var(--gold); font-size: 15px; font-weight: 900; margin-top: auto; padding-top: 18px; }
+    .student-spotlight { border: 1px solid rgba(84,223,181,.30); background: linear-gradient(120deg, #11342d, #11223c);
+      padding: 28px; border-radius: 21px; display: flex; align-items: center; gap: 25px; }
+    .student-initials { flex: 0 0 76px; width: 76px; height: 76px; border-radius: 19px;
+      display: grid; place-items: center; background: linear-gradient(130deg, #38bdf8, #54dfb5);
+      color: #051322; font-size: 27px; font-weight: 900; }
+    .student-spotlight h4 { margin: 5px 0 3px; font-size: 20px; }
+    .student-spotlight p { margin: 0; color: #bacfe0; font-size: 12px; }
+    .student-spotlight .offer-highlight { margin-left: auto; text-align: right; white-space: nowrap; }
+    .student-spotlight .offer-highlight strong { display: block; color: var(--mint); font-size: 24px; }
+    .student-spotlight .offer-highlight span { color: var(--muted); font-size: 10px; }
 
-        /* DATA TABLE */
-        .data-table-wrap {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px; overflow: hidden; margin-top: 2rem;
-        }
-        .data-table { width: 100%; border-collapse: collapse; }
-        .data-table thead th {
-            padding: 1rem 1.5rem; text-align: left;
-            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.1em; color: var(--text-muted);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .data-table tbody td {
-            padding: 0.9rem 1.5rem;
-            font-size: 0.9rem; font-weight: 500;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .data-table tbody tr:last-child td { border-bottom: none; }
-        .data-table tbody tr:hover { background: var(--bg-card-hover); }
-        .data-table .value { color: var(--text-primary); font-weight: 700; }
+    /* Recruiters and footer */
+    .recruiter-section { border-top: 1px solid var(--border); padding: 56px 0 68px; }
+    .recruiter-section h2 { font-size: clamp(25px,3vw,34px); margin: 8px 0 10px; letter-spacing: -1.1px; }
+    .recruiter-section p { color: var(--muted); font-size: 13px; }
+    .company-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 11px; }
+    .company { padding: 19px 10px; border: 1px solid var(--border); border-radius: 13px;
+      background: #111a2a; text-align: center; font-size: 12px; font-weight: 800; color: #e4eeff; }
+    .company::before { content: ""; display: inline-block; vertical-align: middle; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--cyan); margin-right: 8px; }
+    .cta { margin-top: 46px; padding: 25px 30px; border: 1px solid rgba(57,191,250,.26);
+      border-radius: 18px; display: flex; justify-content: space-between; align-items: center; gap: 24px;
+      background: linear-gradient(120deg, #12324b, #10352f); }
+    .cta h3 { font-size: 18px; margin: 0 0 4px; }
+    .cta p { margin: 0; }
+    .cta a { display: inline-block; white-space: nowrap; color: #071626; background: #fff;
+      padding: 13px 19px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 12px; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0 38px; color: #8ea0b9; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    footer a { text-decoration: none; color: #b3cce4; }
 
-        /* RECRUITER PILLS */
-        .recruiters-grid {
-            display: flex; flex-wrap: wrap; gap: 1rem;
-            justify-content: center; margin-top: 2rem;
-        }
-        .recruiter-pill {
-            display: flex; align-items: center; gap: 0.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 50px; padding: 0.6rem 1.2rem;
-            font-size: 0.82rem; font-weight: 600;
-            color: var(--text-secondary);
-            transition: all 0.25s;
-        }
-        .recruiter-pill:hover {
-            border-color: rgba(59,130,246,0.3);
-            color: var(--text-primary);
-            transform: translateY(-1px);
-        }
-        .recruiter-dot {
-            width: 8px; height: 8px; border-radius: 50%;
-            background: var(--gradient-brand);
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center; padding: 4rem 3rem 2rem;
-            border-top: 1px solid var(--border-subtle);
-            max-width: 1200px; margin: 2rem auto 0;
-        }
-        footer p { font-size: 0.8rem; color: var(--text-muted); }
-        footer a { color: var(--text-secondary); text-decoration: none; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            nav { padding: 1rem 1.25rem; }
-            nav ul { gap: 1rem; }
-            nav ul li a { font-size: 0.7rem; }
-            .hero { padding: 8rem 1.5rem 3rem; }
-            section { padding: 3rem 1.5rem; }
-            .highlights { grid-template-columns: repeat(2, 1fr); }
-            .data-table thead th, .data-table tbody td { padding: 0.75rem 1rem; }
-        }
-        @media (max-width: 480px) {
-            nav ul { display: none; }
-            .highlights { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-            .stat-value { font-size: 1.5rem; }
-        }
-    </style>
+    @media (max-width: 1050px) {
+      .nav-inner { flex-direction: column; justify-content: center; gap: 12px; padding-top: 16px; padding-bottom: 16px; }
+      .nav-links { max-width: 100%; overflow-x: auto; gap: 18px; }
+      .hero-layout { gap: 28px; }
+      .stat-grid, .offer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .company-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    }
+    @media (max-width: 720px) {
+      .shell { padding: 0 18px; }
+      .nav-inner { align-items: stretch; }
+      .brand { font-size: 16px; }
+      .nav-links { padding-bottom: 2px; }
+      .hero { padding: 55px 0 43px; }
+      .hero-layout, .analysis-grid { grid-template-columns: 1fr; }
+      .hero h1 { letter-spacing: -1.8px; }
+      .hero-showcase { display: none; }
+      .batch-zone { padding-top: 31px; }
+      .batch-selector { margin-bottom: 33px; }
+      .selector-label { width: 100%; }
+      .batch-btn { flex: 1; }
+      .heading-row { margin-top: 42px; }
+      .student-spotlight { align-items: flex-start; flex-wrap: wrap; gap: 15px; }
+      .student-spotlight .offer-highlight { margin: 0 0 0 91px; text-align: left; }
+      .cta { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 430px) {
+      .stat-grid, .offer-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .stat { padding: 20px 14px; min-height: 138px; }
+      .stat-number { font-size: 27px; }
+      .stat-label { font-size: 11px; }
+      .offer-card { padding: 16px; min-height: 185px; }
+      .offer-card h4 { font-size: 14px; }
+      .offer-card .package { font-size: 13px; }
+      .company-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .data-panel, .compare-panel { padding: 18px; }
+      .student-initials { width: 62px; height: 62px; flex-basis: 62px; }
+      .student-spotlight .offer-highlight { margin-left: 77px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-    <div class="logo">
-        <span>PW </span><em>Institute of Innovation</em>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="index.html">PW <span>Institute of Innovation</span></a>
+      <div class="nav-links">
+        <a href="skills.html">Skills</a>
+        <a href="sot.html">School of Technology</a>
+        <a href="som.html">School of Management</a>
+        <a href="projects.html">Projects</a>
+        <a href="placements.html" class="active" aria-current="page">Placements</a>
+      </div>
     </div>
-    <ul>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="sot.html">School of Technology</a></li>
-        <li><a href="som.html">School of Management</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="placements.html" class="active">Placements</a></li>
-    </ul>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Placement &amp; Internship Outcomes</h1>
-    <p>Real results from our students — internships secured, offers accepted, careers launched.</p>
-</div>
-
-<!-- KEY HIGHLIGHTS -->
-<section>
-    <div class="section-label">Key Highlights</div>
-    <div class="section-title">SOT23 Batch — Placement Report 2024–25</div>
-    <div class="highlights">
-        <div class="stat-card">
-            <div class="stat-value">94.3%</div>
-            <div class="stat-label">Placement Rate</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">67 / 71</div>
-            <div class="stat-label">Students Placed</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">38</div>
-            <div class="stat-label">Unique Recruiters</div>
-        </div>
-        <div class="stat-card warm">
-            <div class="stat-value">10 LPA+</div>
-            <div class="stat-label">Highest CTC</div>
-        </div>
-        <div class="stat-card warm">
-            <div class="stat-value">₹20.9K</div>
-            <div class="stat-label">Avg Stipend / mo</div>
-        </div>
-        <div class="stat-card warm">
-            <div class="stat-value">₹57.3K</div>
-            <div class="stat-label">Top 10% Avg</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">8</div>
-            <div class="stat-label">Full-Time Offers</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">19</div>
-            <div class="stat-label">2+ Offers</div>
-        </div>
+  <header class="hero">
+    <div class="shell hero-layout">
+      <div>
+        <span class="eyebrow">PW IOI / Career outcomes</span>
+        <h1>Real skills.<br><span class="gradient-text">Real career outcomes.</span></h1>
+        <p class="hero-copy">From hands-on projects to industry opportunities, explore the placement and internship outcomes of our School of Technology students.</p>
+        <div class="hero-tags"><span>Batch-wise reporting</span><span>Internships &amp; full-time roles</span><span>Student success stories</span></div>
+      </div>
+      <div class="hero-showcase" aria-label="Featured SOT23 and SOT24 outcomes">
+        <div class="showcase-kicker">SOT23 placement report</div>
+        <div class="showcase-number">95.7%</div>
+        <div class="showcase-caption">Reported placement rate</div>
+        <div class="showcase-rule"></div>
+        <div class="showcase-bottom"><div><p>SOT23 recruiters</p><strong>42</strong></div><div><p>SOT24 highest CTC</p><strong>7.05 LPA</strong></div></div>
+      </div>
     </div>
-</section>
+  </header>
 
-<!-- DETAILED TABLE -->
-<section>
-    <div class="section-label">Detailed Breakdown</div>
-    <div class="section-title">Core Placement Statistics</div>
-    <div class="data-table-wrap">
-        <table class="data-table">
-            <thead>
-                <tr><th>Metric</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Students seeking placements through institute</td><td class="value">71</td></tr>
-                <tr><td>Students with offers (51 CS + 16 Self-Placed)</td><td class="value">67</td></tr>
-                <tr><td>Placement percentage</td><td class="value">94.3%</td></tr>
-                <tr><td>Highest monthly stipend / CTC</td><td class="value">10 LPA + 20L ESOPs</td></tr>
-                <tr><td>Average stipend (CS placed students)</td><td class="value">₹20.90K / month</td></tr>
-                <tr><td>Top 10% average stipend (CS placed)</td><td class="value">₹57.29K / month</td></tr>
-                <tr><td>Top 25% average stipend (CS placed)</td><td class="value">₹44.56K / month</td></tr>
-                <tr><td>Students with 2+ offers/internships (CS placed)</td><td class="value">19</td></tr>
-                <tr><td>Students with full-time offers (in 6th sem)</td><td class="value">8</td></tr>
-                <tr><td>Global / international placements</td><td class="value">0</td></tr>
-            </tbody>
-        </table>
+  <main>
+    <div class="shell batch-zone">
+      <div class="batch-selector" role="tablist" aria-label="Choose School of Technology batch">
+        <span class="selector-label">Explore a batch</span>
+        <button type="button" class="batch-btn" id="tab-sot23" role="tab" aria-controls="sot23" aria-selected="true" data-batch="sot23">SOT23</button>
+        <button type="button" class="batch-btn" id="tab-sot24" role="tab" aria-controls="sot24" aria-selected="false" data-batch="sot24">SOT24</button>
+      </div>
+
+      <!-- ===================== SOT23 ===================== -->
+      <section id="sot23" role="tabpanel" aria-labelledby="tab-sot23" class="batch-panel">
+        <div class="panel-top">
+          <span class="section-kicker">01 / First cohort outcomes</span>
+          <h2>SOT23 — Placement &amp; Internship Report</h2>
+          <p>Reported 2024–25 placement results, including Career Services placements and self-placed students.</p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat featured"><div class="stat-label">Placement rate</div><div class="stat-number">95.7%</div><span class="context">As reported in the batch summary</span></div>
+          <div class="stat"><div class="stat-label">Students with offers</div><div class="stat-number">68 / 71</div><span class="context">Students seeking placement: 71</span></div>
+          <div class="stat"><div class="stat-label">Unique recruiters</div><div class="stat-number">42</div><span class="context">Companies across reported outcomes</span></div>
+          <div class="stat featured"><div class="stat-label">Highest CTC</div><div class="stat-number">17 LPA</div><span class="context">Self-placed offer</span></div>
+          <div class="stat"><div class="stat-label">Full-time offers</div><div class="stat-number">10</div><span class="context">8 Career Services + 2 self-placed</span></div>
+          <div class="stat"><div class="stat-label">Average monthly stipend</div><div class="stat-number">₹21K</div><span class="context">Career Services placed students</span></div>
+          <div class="stat"><div class="stat-label">Top 10% monthly average</div><div class="stat-number">₹57.29K</div><span class="context">Reported internship stipend</span></div>
+          <div class="stat"><div class="stat-label">Students with multiple offers</div><div class="stat-number">21</div><span class="context">2 or more offers / internships</span></div>
+        </div>
+
+        <div class="heading-row">
+          <div><span class="section-kicker">Students in the spotlight</span><h3>Early full-time career milestones</h3></div>
+          <p class="subtext">Selected offers from the report</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card"><span class="type">AI Engineering</span><h4>Rohit Makani</h4><div class="role">Founding AI Engineer<br>DoableClaw</div><div class="package">10 LPA + ₹20L ESOPs</div></article>
+          <article class="offer-card"><span class="type">Software Engineering</span><h4>Aman Raj Gupta</h4><div class="role">SDE-1<br>Allo Health</div><div class="package">10 LPA + ₹2L ESOPs</div></article>
+          <article class="offer-card"><span class="type">Software Engineering</span><h4>Rohit Sah</h4><div class="role">SDE-1<br>PhysicsWallah</div><div class="package">8 LPA</div></article>
+          <article class="offer-card"><span class="type">Global Markets</span><h4>Raj Agrawal</h4><div class="role">International Markets<br>Futures First</div><div class="package">17 LPA</div></article>
+        </div>
+
+        <div class="heading-row"><div><span class="section-kicker">Beyond the headline</span><h3>Placement breakdown</h3></div></div>
+        <div class="analysis-grid">
+          <div class="data-panel">
+            <h4>Core placement statistics</h4>
+            <table class="data-table"><tbody>
+              <tr><th>Students seeking placements</th><td>71</td></tr>
+              <tr><th>Students with offers</th><td>68</td></tr>
+              <tr><th>Placement rate (reported)</th><td>95.7%</td></tr>
+              <tr><th>Highest self-placed CTC</th><td>17 LPA</td></tr>
+              <tr><th>Highest Career Services offer</th><td>10 LPA + ₹20L ESOPs</td></tr>
+              <tr><th>Top 25% average monthly stipend</th><td>₹44.56K</td></tr>
+              <tr><th>Students with 2+ offers/internships</th><td>21</td></tr>
+              <tr><th>Full-time offers (sixth semester)</th><td>10</td></tr>
+            </tbody></table>
+          </div>
+          <div class="compare-panel">
+            <h4>Monthly stipend benchmarks</h4>
+            <div class="benchmark"><div class="benchmark-head"><span>Top 10% average</span><strong>₹57.29K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:100%"></div></div></div>
+            <div class="benchmark"><div class="benchmark-head"><span>Top 25% average</span><strong>₹44.56K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:77.8%"></div></div></div>
+            <div class="benchmark"><div class="benchmark-head"><span>Career Services average</span><strong>₹21K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:36.7%"></div></div></div>
+            <p class="benchmark-note">Bars show the relative size of the three monthly averages; they are not the percentage of students placed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SOT24 ===================== -->
+      <section id="sot24" role="tabpanel" aria-labelledby="tab-sot24" class="batch-panel" hidden>
+        <div class="panel-top">
+          <span class="section-kicker">02 / Growing opportunities</span>
+          <h2>SOT24 — Placement &amp; Internship Report</h2>
+          <p>Early hiring outcomes and internship compensation benchmarks for the SOT24 cohort.</p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat featured"><div class="stat-label">Highest reported CTC</div><div class="stat-number">7.05 LPA</div><span class="context">Suraj Kumar at Crizac</span></div>
+          <div class="stat featured"><div class="stat-label">Full-time offers</div><div class="stat-number">1</div><span class="context">Suraj Kumar — Crizac</span></div>
+          <div class="stat"><div class="stat-label">Average monthly stipend</div><div class="stat-number">₹19.6K</div><span class="context">Across paid internships / offers</span></div>
+          <div class="stat"><div class="stat-label">Students with multiple offers</div><div class="stat-number">4</div><span class="context">2 or more offers / internships</span></div>
+          <div class="stat"><div class="stat-label">Top 10% monthly average</div><div class="stat-number">₹39.58K</div><span class="context">Paid internship stipend</span></div>
+          <div class="stat"><div class="stat-label">Top 25% monthly average</div><div class="stat-number">₹29.11K</div><span class="context">Paid internship stipend</span></div>
+        </div>
+
+        <div class="heading-row"><div><span class="section-kicker">Student in the spotlight</span><h3>A full-time milestone</h3></div></div>
+        <div class="student-spotlight">
+          <div class="student-initials" aria-hidden="true">SK</div>
+          <div><span class="section-kicker">SOT24 / AI Engineering</span><h4>Suraj Kumar</h4><p>AI Engineer at Crizac · Reported full-time offer</p></div>
+          <div class="offer-highlight"><strong>7.05 LPA</strong><span>Reported CTC</span></div>
+        </div>
+
+        <div class="heading-row"><div><span class="section-kicker">Beyond the headline</span><h3>Internship compensation snapshot</h3></div></div>
+        <div class="analysis-grid">
+          <div class="data-panel">
+            <h4>Core placement statistics</h4>
+            <table class="data-table"><tbody>
+              <tr><th>Highest reported CTC</th><td>7.05 LPA</td></tr>
+              <tr><th>Student / company</th><td>Suraj Kumar / Crizac</td></tr>
+              <tr><th>Average monthly stipend</th><td>₹19.6K</td></tr>
+              <tr><th>Top 10% average stipend</th><td>₹39.58K</td></tr>
+              <tr><th>Top 25% average stipend</th><td>₹29.11K</td></tr>
+              <tr><th>Students with 2+ offers / internships</th><td>4</td></tr>
+              <tr><th>Full-time offers</th><td>1</td></tr>
+            </tbody></table>
+          </div>
+          <div class="compare-panel">
+            <h4>Monthly stipend benchmarks</h4>
+            <div class="benchmark"><div class="benchmark-head"><span>Top 10% average</span><strong>₹39.58K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:100%"></div></div></div>
+            <div class="benchmark"><div class="benchmark-head"><span>Top 25% average</span><strong>₹29.11K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:73.5%"></div></div></div>
+            <div class="benchmark"><div class="benchmark-head"><span>All paid intern average</span><strong>₹19.6K</strong></div><div class="benchmark-track"><div class="benchmark-fill" style="width:49.5%"></div></div></div>
+            <p class="benchmark-note">Based on the reported averages among paid internships and offers. Values are monthly stipend amounts, not annual CTC.</p>
+          </div>
+        </div>
+      </section>
     </div>
-</section>
 
-<!-- RECRUITERS -->
-<section>
-    <div class="section-label">Our Recruiting Partners</div>
-    <div class="section-title">Top Recruiter Snapshot</div>
-    <div class="recruiters-grid">
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>KPMG</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Physics Wallah</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Ola</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>ZopSmart</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>GoComet</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Crizac</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Allo Health</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>RoxStar</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>GeeksforGeeks</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>StockGro</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Clipwise</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Galvor</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Indibus</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>dashloc</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Growth School</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Tennr</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>FlexyPe</div>
-        <div class="recruiter-pill"><div class="recruiter-dot"></div>Urban Harvest</div>
-    </div>
-</section>
+    <section class="recruiter-section">
+      <div class="shell">
+        <span class="section-kicker">The companies behind the opportunities</span>
+        <h2>Recruiter snapshot</h2>
+        <p>A selection of companies featured in the PW IOI placement report.</p>
+        <div class="company-grid">
+          <div class="company">KPMG</div><div class="company">PhysicsWallah</div><div class="company">Ola</div>
+          <div class="company">ZopSmart</div><div class="company">GoComet</div><div class="company">Crizac</div>
+          <div class="company">Allo Health</div><div class="company">RoxStar</div><div class="company">Tennr</div>
+          <div class="company">FlexyPe</div><div class="company">GeeksforGeeks</div><div class="company">StockGro</div>
+          <div class="company">Clipwise</div><div class="company">Galvor</div><div class="company">Indibus</div>
+          <div class="company">dashloc</div><div class="company">Growth School</div><div class="company">Urban Harvest</div>
+        </div>
+        <div class="cta"><div><h3>Explore the talent behind these outcomes</h3><p>See student profiles, technical strengths, projects and portfolios.</p></div><a href="sot.html">Explore SOT student profiles &rarr;</a></div>
+      </div>
+    </section>
+  </main>
 
-<footer>
-    <p>PW Institute of Innovation (PWIOI) &middot; Career Services &middot; <a href="index.html">Back to Showcase</a></p>
-</footer>
+  <footer>
+    <div class="shell footer-inner"><span>PW Institute of Innovation · Career Services</span><span>Placement figures: Orientation (Placement Stats) report · <a href="index.html">Back to showcase</a></span></div>
+  </footer>
 
+  <script>
+    const batchButtons = Array.from(document.querySelectorAll('.batch-btn'));
+    const batchPanels = Array.from(document.querySelectorAll('.batch-panel'));
+    function showBatch(batch, updateHash = true) {
+      if (!['sot23', 'sot24'].includes(batch)) batch = 'sot23';
+      batchButtons.forEach(btn => btn.setAttribute('aria-selected', String(btn.dataset.batch === batch)));
+      batchPanels.forEach(panel => { panel.hidden = panel.id !== batch; });
+      if (updateHash) history.replaceState(null, '', '#' + batch);
+    }
+    batchButtons.forEach(btn => btn.addEventListener('click', () => showBatch(btn.dataset.batch)));
+    window.addEventListener('hashchange', () => showBatch(location.hash.slice(1), false));
+    showBatch(location.hash.slice(1), false);
+  </script>
 </body>
 </html>
